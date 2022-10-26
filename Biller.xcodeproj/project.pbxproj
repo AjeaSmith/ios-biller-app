@@ -8,21 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		9528B8BD290927BB0078DA53 /* BillerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8BC290927BB0078DA53 /* BillerApp.swift */; };
-		9528B8BF290927BB0078DA53 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8BE290927BB0078DA53 /* ContentView.swift */; };
 		9528B8C1290927BC0078DA53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9528B8C0290927BC0078DA53 /* Assets.xcassets */; };
 		9528B8C4290927BC0078DA53 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9528B8C3290927BC0078DA53 /* Preview Assets.xcassets */; };
 		9528B8C6290927BC0078DA53 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8C5290927BC0078DA53 /* Persistence.swift */; };
 		9528B8C9290927BC0078DA53 /* Biller.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8C7290927BC0078DA53 /* Biller.xcdatamodeld */; };
+		9528B8D4290928820078DA53 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 9528B8D3290928820078DA53 /* FSCalendar */; };
+		9528B8D6290928E70078DA53 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8D5290928E70078DA53 /* RootView.swift */; };
+		9528B8D8290929010078DA53 /* BillsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8D7290929010078DA53 /* BillsView.swift */; };
+		9528B8DA2909290D0078DA53 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8D92909290D0078DA53 /* SettingsView.swift */; };
+		9528B8DC2909291B0078DA53 /* AddBillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8DB2909291B0078DA53 /* AddBillView.swift */; };
+		9528B8DE290929300078DA53 /* BillDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8DD290929300078DA53 /* BillDetailView.swift */; };
+		9528B8E029092A180078DA53 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8DF29092A180078DA53 /* CalendarView.swift */; };
+		9528B8E229092A370078DA53 /* CalendarViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8E129092A370078DA53 /* CalendarViewRepresentable.swift */; };
+		9528B8E529092A660078DA53 /* BillEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8E329092A660078DA53 /* BillEntity+CoreDataClass.swift */; };
+		9528B8E629092A660078DA53 /* BillEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8E429092A660078DA53 /* BillEntity+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9528B8B9290927BB0078DA53 /* Biller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Biller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9528B8BC290927BB0078DA53 /* BillerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillerApp.swift; sourceTree = "<group>"; };
-		9528B8BE290927BB0078DA53 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9528B8C0290927BC0078DA53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9528B8C3290927BC0078DA53 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9528B8C5290927BC0078DA53 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		9528B8C8290927BC0078DA53 /* Biller.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Biller.xcdatamodel; sourceTree = "<group>"; };
+		9528B8D5290928E70078DA53 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		9528B8D7290929010078DA53 /* BillsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsView.swift; sourceTree = "<group>"; };
+		9528B8D92909290D0078DA53 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		9528B8DB2909291B0078DA53 /* AddBillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBillView.swift; sourceTree = "<group>"; };
+		9528B8DD290929300078DA53 /* BillDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailView.swift; sourceTree = "<group>"; };
+		9528B8DF29092A180078DA53 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		9528B8E129092A370078DA53 /* CalendarViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewRepresentable.swift; sourceTree = "<group>"; };
+		9528B8E329092A660078DA53 /* BillEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BillEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		9528B8E429092A660078DA53 /* BillEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BillEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9528B8D4290928820078DA53 /* FSCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +74,8 @@
 			isa = PBXGroup;
 			children = (
 				9528B8BC290927BB0078DA53 /* BillerApp.swift */,
-				9528B8BE290927BB0078DA53 /* ContentView.swift */,
+				9528B8D0290928470078DA53 /* Models */,
+				9528B8CF290928400078DA53 /* Views */,
 				9528B8C0290927BC0078DA53 /* Assets.xcassets */,
 				9528B8C5290927BC0078DA53 /* Persistence.swift */,
 				9528B8C7290927BC0078DA53 /* Biller.xcdatamodeld */,
@@ -71,6 +90,37 @@
 				9528B8C3290927BC0078DA53 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9528B8CF290928400078DA53 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9528B8D1290928650078DA53 /* calendar */,
+				9528B8D5290928E70078DA53 /* RootView.swift */,
+				9528B8D7290929010078DA53 /* BillsView.swift */,
+				9528B8D92909290D0078DA53 /* SettingsView.swift */,
+				9528B8DB2909291B0078DA53 /* AddBillView.swift */,
+				9528B8DD290929300078DA53 /* BillDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9528B8D0290928470078DA53 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9528B8E329092A660078DA53 /* BillEntity+CoreDataClass.swift */,
+				9528B8E429092A660078DA53 /* BillEntity+CoreDataProperties.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9528B8D1290928650078DA53 /* calendar */ = {
+			isa = PBXGroup;
+			children = (
+				9528B8DF29092A180078DA53 /* CalendarView.swift */,
+				9528B8E129092A370078DA53 /* CalendarViewRepresentable.swift */,
+			);
+			path = calendar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,6 +139,9 @@
 			dependencies = (
 			);
 			name = Biller;
+			packageProductDependencies = (
+				9528B8D3290928820078DA53 /* FSCalendar */,
+			);
 			productName = Biller;
 			productReference = 9528B8B9290927BB0078DA53 /* Biller.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +170,9 @@
 				Base,
 			);
 			mainGroup = 9528B8B0290927BB0078DA53;
+			packageReferences = (
+				9528B8D2290928820078DA53 /* XCRemoteSwiftPackageReference "FSCalendar" */,
+			);
 			productRefGroup = 9528B8BA290927BB0078DA53 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -143,10 +199,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9528B8DA2909290D0078DA53 /* SettingsView.swift in Sources */,
 				9528B8C6290927BC0078DA53 /* Persistence.swift in Sources */,
 				9528B8C9290927BC0078DA53 /* Biller.xcdatamodeld in Sources */,
-				9528B8BF290927BB0078DA53 /* ContentView.swift in Sources */,
+				9528B8DC2909291B0078DA53 /* AddBillView.swift in Sources */,
 				9528B8BD290927BB0078DA53 /* BillerApp.swift in Sources */,
+				9528B8E529092A660078DA53 /* BillEntity+CoreDataClass.swift in Sources */,
+				9528B8E229092A370078DA53 /* CalendarViewRepresentable.swift in Sources */,
+				9528B8E029092A180078DA53 /* CalendarView.swift in Sources */,
+				9528B8D6290928E70078DA53 /* RootView.swift in Sources */,
+				9528B8E629092A660078DA53 /* BillEntity+CoreDataProperties.swift in Sources */,
+				9528B8DE290929300078DA53 /* BillDetailView.swift in Sources */,
+				9528B8D8290929010078DA53 /* BillsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +411,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9528B8D2290928820078DA53 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9528B8D3290928820078DA53 /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9528B8D2290928820078DA53 /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		9528B8C7290927BC0078DA53 /* Biller.xcdatamodeld */ = {
