@@ -14,6 +14,7 @@ struct BillsView: View {
     
     var body: some View {
         NavigationView {
+            Text("Hello")
             List{
                 Section(content: {
                     ForEach(bills, id: \.self){ bill in
