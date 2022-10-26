@@ -38,8 +38,8 @@
 		9528B8DD290929300078DA53 /* BillDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailView.swift; sourceTree = "<group>"; };
 		9528B8DF29092A180078DA53 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		9528B8E129092A370078DA53 /* CalendarViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewRepresentable.swift; sourceTree = "<group>"; };
-		9528B8E329092A660078DA53 /* BillEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BillEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		9528B8E429092A660078DA53 /* BillEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BillEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		9528B8E329092A660078DA53 /* BillEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BillEntity+CoreDataClass.swift"; path = "Biller/Models/BillEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		9528B8E429092A660078DA53 /* BillEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BillEntity+CoreDataProperties.swift"; path = "Biller/Models/BillEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
