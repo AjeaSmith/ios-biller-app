@@ -14,7 +14,6 @@ struct BillsView: View {
     
     var body: some View {
         NavigationView {
-            Text("Hello")
             List{
                 Section(content: {
                     ForEach(bills, id: \.self){ bill in
@@ -30,7 +29,7 @@ struct BillsView: View {
                                         .foregroundColor(.secondary)
                                 }
                                 Spacer()
-                                Text("$\(bill.amount)")
+                                Text("\(bill.amount.formatted(.currency(code: "USD")))")
                             }
                         }
                         

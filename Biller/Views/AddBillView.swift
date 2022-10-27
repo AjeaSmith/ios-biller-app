@@ -49,6 +49,7 @@ struct AddBillView: View {
                 Button("Add Bill") {
                     // ------ PUT THIS LOGIC IN MVVM
                     addItem()
+                    presentationMode.wrappedValue.dismiss()
                     // -------- END
                 }
                 .padding()
@@ -69,7 +70,6 @@ struct AddBillView: View {
         
         do {
             try viewContext.save()
-            presentationMode.wrappedValue.dismiss()
         } catch {
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")

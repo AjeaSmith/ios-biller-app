@@ -45,6 +45,7 @@ struct CalendarViewRepresentable: UIViewRepresentable {
     
     func updateUIView(_ uiView: FSCalendar, context: Context) {
         uiView.reloadData()
+        print("It changed, \(bills)")
     }
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
