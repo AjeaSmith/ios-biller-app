@@ -22,6 +22,7 @@
 		9528B8E229092A370078DA53 /* CalendarViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8E129092A370078DA53 /* CalendarViewRepresentable.swift */; };
 		9528B8E529092A660078DA53 /* BillEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8E329092A660078DA53 /* BillEntity+CoreDataClass.swift */; };
 		9528B8E629092A660078DA53 /* BillEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8E429092A660078DA53 /* BillEntity+CoreDataProperties.swift */; };
+		9528B8E8290B66450078DA53 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8E7290B66450078DA53 /* NotificationsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		9528B8E129092A370078DA53 /* CalendarViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewRepresentable.swift; sourceTree = "<group>"; };
 		9528B8E329092A660078DA53 /* BillEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BillEntity+CoreDataClass.swift"; path = "Biller/Models/BillEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		9528B8E429092A660078DA53 /* BillEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BillEntity+CoreDataProperties.swift"; path = "Biller/Models/BillEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		9528B8E7290B66450078DA53 /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				9528B8C5290927BC0078DA53 /* Persistence.swift */,
 				9528B8C7290927BC0078DA53 /* Biller.xcdatamodeld */,
 				9528B8C2290927BC0078DA53 /* Preview Content */,
+				9528B8E7290B66450078DA53 /* NotificationsManager.swift */,
 			);
 			path = Biller;
 			sourceTree = "<group>";
@@ -95,12 +98,12 @@
 		9528B8CF290928400078DA53 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9528B8D1290928650078DA53 /* calendar */,
 				9528B8D5290928E70078DA53 /* RootView.swift */,
 				9528B8D7290929010078DA53 /* BillsView.swift */,
 				9528B8D92909290D0078DA53 /* SettingsView.swift */,
 				9528B8DB2909291B0078DA53 /* AddBillView.swift */,
 				9528B8DD290929300078DA53 /* BillDetailView.swift */,
+				9528B8D1290928650078DA53 /* calendar */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				9528B8E029092A180078DA53 /* CalendarView.swift in Sources */,
 				9528B8D6290928E70078DA53 /* RootView.swift in Sources */,
 				9528B8E629092A660078DA53 /* BillEntity+CoreDataProperties.swift in Sources */,
+				9528B8E8290B66450078DA53 /* NotificationsManager.swift in Sources */,
 				9528B8DE290929300078DA53 /* BillDetailView.swift in Sources */,
 				9528B8D8290929010078DA53 /* BillsView.swift in Sources */,
 			);

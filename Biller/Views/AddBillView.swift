@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddBillView: View {
-    let calendar = Calendar.current
+    let NM = NotificationsManager()
     
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentationMode
@@ -16,6 +16,8 @@ struct AddBillView: View {
     @State private var billname = ""
     @State private var amount = 0.0
     @State private var dueDate = Date()
+    @State private var isWeekNotification = false
+    @State private var is5DaysNotification = false
     
     let formatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -27,8 +29,10 @@ struct AddBillView: View {
         ScrollView{
             // MARK: Form
             VStack(spacing: 20){
+                
                 VStack(alignment: .leading){
                     Text("Bill Name:")
+                        .bold()
                     TextField("e.g. Cable, Netflix", text: $billname)
                         .textFieldStyle(.roundedBorder)
                 }
@@ -45,10 +49,22 @@ struct AddBillView: View {
                     DatePicker(selection: $dueDate, in: Date()..., displayedComponents: .date, label: { Text("Due Date") })
                         .datePickerStyle(.graphical)
                 }
+                VStack{
+                    Toggle("Notify a week before", isOn: $isWeekNotification)
+                        .disabled(is5DaysNotification)
+                    
+                    Toggle("Notify 5 days before", isOn: $is5DaysNotification)
+                        .disabled(isWeekNotification)
+                }
                 
                 Button("Add Bill") {
                     // ------ PUT THIS LOGIC IN MVVM
                     addItem()
+                    
+                    if is5DaysNotification {
+                        NM.setForFiveDays(dueDate: dueDate, billName: billname, amount: amount)
+                    }else if isWeekNotification {
+                    }
                     presentationMode.wrappedValue.dismiss()
                     // -------- END
                 }
