@@ -9,21 +9,19 @@ import SwiftUI
 
 struct AddBillView: View {
     let NM = NotificationsManager()
+    @ObservedObject private var currencyManagerUS = CurrencyManager(
+        amount: 0,
+        locale: .init(identifier: "en_US")
+    )
     
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentationMode
     
     @State private var billname = ""
-    @State private var amount = 0.0
+    @State private var amount = 0
     @State private var dueDate = Date()
     @State private var isWeekNotification = false
     @State private var is5DaysNotification = false
-    
-    let formatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        return formatter
-    }()
     
     var body: some View {
         ScrollView{
@@ -39,10 +37,12 @@ struct AddBillView: View {
                 VStack(alignment: .leading){
                     Text("Bill Amount:")
                         .bold()
-                    TextField("Enter your score", value: $amount, formatter: formatter)
-                                .textFieldStyle(.roundedBorder)
-                        .keyboardType(.decimalPad)
+                    TextField(currencyManagerUS.string, text: $currencyManagerUS.string)
+                        .keyboardType(.numberPad)
+                        .multilineTextAlignment(.trailing)
+                        .onChange(of: currencyManagerUS.string, perform: currencyManagerUS.valueChanged)
                 }
+                Text("\(currencyManagerUS.string)")
                 VStack(alignment: .leading){
                     Text("Due Date:")
                         .bold()
@@ -62,7 +62,7 @@ struct AddBillView: View {
                     addItem()
                     
                     if is5DaysNotification {
-                        NM.setForFiveDays(dueDate: dueDate, billName: billname, amount: amount)
+                        NM.setForFiveDays(dueDate: dueDate, billName: billname, amount: Double(amount))
                     }else if isWeekNotification {
                     }
                     presentationMode.wrappedValue.dismiss()
@@ -82,7 +82,7 @@ struct AddBillView: View {
         let newItem = BillEntity(context: viewContext)
         newItem.dueDate = dueDate
         newItem.name = billname
-        newItem.amount = amount
+        newItem.amount = currencyManagerUS.string
         
         do {
             try viewContext.save()

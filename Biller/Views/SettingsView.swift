@@ -40,4 +40,3 @@ struct SettingsView_Previews: PreviewProvider {
         SettingsView()
     }
 }
-

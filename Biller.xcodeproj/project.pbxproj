@@ -11,7 +11,6 @@
 		9528B8C1290927BC0078DA53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9528B8C0290927BC0078DA53 /* Assets.xcassets */; };
 		9528B8C4290927BC0078DA53 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9528B8C3290927BC0078DA53 /* Preview Assets.xcassets */; };
 		9528B8C6290927BC0078DA53 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8C5290927BC0078DA53 /* Persistence.swift */; };
-		9528B8C9290927BC0078DA53 /* Biller.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8C7290927BC0078DA53 /* Biller.xcdatamodeld */; };
 		9528B8D4290928820078DA53 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 9528B8D3290928820078DA53 /* FSCalendar */; };
 		9528B8D6290928E70078DA53 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8D5290928E70078DA53 /* RootView.swift */; };
 		9528B8D8290929010078DA53 /* BillsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8D7290929010078DA53 /* BillsView.swift */; };
@@ -20,9 +19,11 @@
 		9528B8DE290929300078DA53 /* BillDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8DD290929300078DA53 /* BillDetailView.swift */; };
 		9528B8E029092A180078DA53 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8DF29092A180078DA53 /* CalendarView.swift */; };
 		9528B8E229092A370078DA53 /* CalendarViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8E129092A370078DA53 /* CalendarViewRepresentable.swift */; };
-		9528B8E529092A660078DA53 /* BillEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8E329092A660078DA53 /* BillEntity+CoreDataClass.swift */; };
-		9528B8E629092A660078DA53 /* BillEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8E429092A660078DA53 /* BillEntity+CoreDataProperties.swift */; };
 		9528B8E8290B66450078DA53 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8E7290B66450078DA53 /* NotificationsManager.swift */; };
+		9528B8F1290C689F0078DA53 /* CurrencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8F0290C689F0078DA53 /* CurrencyManager.swift */; };
+		9528B8F8290C70440078DA53 /* BillModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8F6290C70440078DA53 /* BillModel.xcdatamodeld */; };
+		9528B8FA290C70B60078DA53 /* BillEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8F9290C70B60078DA53 /* BillEntity+CoreDataProperties.swift */; };
+		95D44037290C732300B90D9A /* BillEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D44036290C732300B90D9A /* BillEntity+CoreDataClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +32,6 @@
 		9528B8C0290927BC0078DA53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9528B8C3290927BC0078DA53 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9528B8C5290927BC0078DA53 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		9528B8C8290927BC0078DA53 /* Biller.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Biller.xcdatamodel; sourceTree = "<group>"; };
 		9528B8D5290928E70078DA53 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		9528B8D7290929010078DA53 /* BillsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsView.swift; sourceTree = "<group>"; };
 		9528B8D92909290D0078DA53 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -39,9 +39,11 @@
 		9528B8DD290929300078DA53 /* BillDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailView.swift; sourceTree = "<group>"; };
 		9528B8DF29092A180078DA53 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		9528B8E129092A370078DA53 /* CalendarViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewRepresentable.swift; sourceTree = "<group>"; };
-		9528B8E329092A660078DA53 /* BillEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BillEntity+CoreDataClass.swift"; path = "Biller/Models/BillEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		9528B8E429092A660078DA53 /* BillEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BillEntity+CoreDataProperties.swift"; path = "Biller/Models/BillEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		9528B8E7290B66450078DA53 /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
+		9528B8F0290C689F0078DA53 /* CurrencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyManager.swift; sourceTree = "<group>"; };
+		9528B8F7290C70440078DA53 /* BillModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BillModel.xcdatamodel; sourceTree = "<group>"; };
+		9528B8F9290C70B60078DA53 /* BillEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BillEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		95D44036290C732300B90D9A /* BillEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BillEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,12 +77,13 @@
 		9528B8BB290927BB0078DA53 /* Biller */ = {
 			isa = PBXGroup;
 			children = (
+				9528B8F6290C70440078DA53 /* BillModel.xcdatamodeld */,
+				9528B8EF290C688D0078DA53 /* Currency */,
 				9528B8BC290927BB0078DA53 /* BillerApp.swift */,
 				9528B8D0290928470078DA53 /* Models */,
 				9528B8CF290928400078DA53 /* Views */,
 				9528B8C0290927BC0078DA53 /* Assets.xcassets */,
 				9528B8C5290927BC0078DA53 /* Persistence.swift */,
-				9528B8C7290927BC0078DA53 /* Biller.xcdatamodeld */,
 				9528B8C2290927BC0078DA53 /* Preview Content */,
 				9528B8E7290B66450078DA53 /* NotificationsManager.swift */,
 			);
@@ -111,8 +114,8 @@
 		9528B8D0290928470078DA53 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9528B8E329092A660078DA53 /* BillEntity+CoreDataClass.swift */,
-				9528B8E429092A660078DA53 /* BillEntity+CoreDataProperties.swift */,
+				95D44036290C732300B90D9A /* BillEntity+CoreDataClass.swift */,
+				9528B8F9290C70B60078DA53 /* BillEntity+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -124,6 +127,14 @@
 				9528B8E129092A370078DA53 /* CalendarViewRepresentable.swift */,
 			);
 			path = calendar;
+			sourceTree = "<group>";
+		};
+		9528B8EF290C688D0078DA53 /* Currency */ = {
+			isa = PBXGroup;
+			children = (
+				9528B8F0290C689F0078DA53 /* CurrencyManager.swift */,
+			);
+			path = Currency;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,16 +213,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9528B8FA290C70B60078DA53 /* BillEntity+CoreDataProperties.swift in Sources */,
 				9528B8DA2909290D0078DA53 /* SettingsView.swift in Sources */,
 				9528B8C6290927BC0078DA53 /* Persistence.swift in Sources */,
-				9528B8C9290927BC0078DA53 /* Biller.xcdatamodeld in Sources */,
+				9528B8F1290C689F0078DA53 /* CurrencyManager.swift in Sources */,
 				9528B8DC2909291B0078DA53 /* AddBillView.swift in Sources */,
 				9528B8BD290927BB0078DA53 /* BillerApp.swift in Sources */,
-				9528B8E529092A660078DA53 /* BillEntity+CoreDataClass.swift in Sources */,
 				9528B8E229092A370078DA53 /* CalendarViewRepresentable.swift in Sources */,
+				9528B8F8290C70440078DA53 /* BillModel.xcdatamodeld in Sources */,
 				9528B8E029092A180078DA53 /* CalendarView.swift in Sources */,
+				95D44037290C732300B90D9A /* BillEntity+CoreDataClass.swift in Sources */,
 				9528B8D6290928E70078DA53 /* RootView.swift in Sources */,
-				9528B8E629092A660078DA53 /* BillEntity+CoreDataProperties.swift in Sources */,
 				9528B8E8290B66450078DA53 /* NotificationsManager.swift in Sources */,
 				9528B8DE290929300078DA53 /* BillDetailView.swift in Sources */,
 				9528B8D8290929010078DA53 /* BillsView.swift in Sources */,
@@ -349,8 +361,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -378,8 +392,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -436,13 +452,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		9528B8C7290927BC0078DA53 /* Biller.xcdatamodeld */ = {
+		9528B8F6290C70440078DA53 /* BillModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				9528B8C8290927BC0078DA53 /* Biller.xcdatamodel */,
+				9528B8F7290C70440078DA53 /* BillModel.xcdatamodel */,
 			);
-			currentVersion = 9528B8C8290927BC0078DA53 /* Biller.xcdatamodel */;
-			path = Biller.xcdatamodeld;
+			currentVersion = 9528B8F7290C70440078DA53 /* BillModel.xcdatamodel */;
+			path = BillModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

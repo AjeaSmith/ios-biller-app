@@ -7,18 +7,19 @@
 
 import Foundation
 import SwiftUI
+import UIKit
 
 class NotificationsManager {
     let calendar = Calendar.current
     
+    let dateFormatter = DateFormatter()
+
     func setForFiveDays(dueDate: Date, billName: String, amount: Double) {
-        let fromDate = calendar.startOfDay(for: Date())
-        let toDate = calendar.startOfDay(for: dueDate)
-        let numberOfDaysBetween = calendar.dateComponents([.day], from: fromDate, to: toDate)
+        dateFormatter.dateFormat = "MMM d"
         
         let content = UNMutableNotificationContent()
         content.title = "\(billName) bill is coming up"
-        content.body = "Amount of $\(amount) is due on \(dueDate.formatted(date: .abbreviated, time: .omitted))"
+        content.body = "Amount of \(NumberFormatter.localizedString(from: amount as NSNumber, number: .currency)) is due \(dateFormatter.string(from: dueDate))"
         content.sound = UNNotificationSound.default
         
         let fiveDaysTrigger = calendar.date(byAdding: .day, value: -5, to: dueDate)!

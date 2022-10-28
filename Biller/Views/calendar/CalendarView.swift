@@ -26,6 +26,13 @@ struct CalendarView: View {
             }
     }
 }
+struct CalendarView_Previews: PreviewProvider {
+    static var previews: some View {
+        CalendarView()
+    }
+}
+
+
 
 extension CalendarView {
 //    func createSampleBill() -> BillEntity {

@@ -1,8 +1,8 @@
 //
 //  BillEntity+CoreDataClass.swift
-//  Biller
+//  BillR
 //
-//  Created by Ajea Smith on 10/26/22.
+//  Created by Ajea Smith on 9/12/22.
 //
 //
 

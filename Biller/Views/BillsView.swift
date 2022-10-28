@@ -29,7 +29,7 @@ struct BillsView: View {
                                         .foregroundColor(.secondary)
                                 }
                                 Spacer()
-                                Text("\(bill.amount.formatted(.currency(code: "USD")))")
+                                Text("\(bill.unWrappedAmount)")
                             }
                         }
                         
