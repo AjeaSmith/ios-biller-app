@@ -14,12 +14,12 @@ class NotificationsManager {
     
     let dateFormatter = DateFormatter()
 
-    func setForFiveDays(dueDate: Date, billName: String, amount: Double) {
+    func setForFiveDays(dueDate: Date, billName: String, amount: String) {
         dateFormatter.dateFormat = "MMM d"
         
         let content = UNMutableNotificationContent()
         content.title = "\(billName) bill is coming up"
-        content.body = "Amount of \(NumberFormatter.localizedString(from: amount as NSNumber, number: .currency)) is due \(dateFormatter.string(from: dueDate))"
+        content.body = "Amount of \(amount) is due \(dateFormatter.string(from: dueDate))"
         content.sound = UNNotificationSound.default
         
         let fiveDaysTrigger = calendar.date(byAdding: .day, value: -5, to: dueDate)!

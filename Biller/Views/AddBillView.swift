@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct AddBillView: View {
-    let NM = NotificationsManager()
+    private enum Field: Int, CaseIterable {
+        case billname, amount
+    }
+    private let NM = NotificationsManager()
+    
     @ObservedObject private var currencyManagerUS = CurrencyManager(
         amount: 0,
-        locale: .init(identifier: "en_US")
+        locale: .current
     )
     
     @Environment(\.managedObjectContext) private var viewContext
@@ -23,58 +27,74 @@ struct AddBillView: View {
     @State private var isWeekNotification = false
     @State private var is5DaysNotification = false
     
+    @FocusState private var focusedField: Field?
+    
     var body: some View {
-        ScrollView{
-            // MARK: Form
-            VStack(spacing: 20){
-                
-                VStack(alignment: .leading){
+        // MARK: Form
+        Form {
+            VStack(alignment: .leading){
+                Group{
                     Text("Bill Name:")
+                        .font(.title)
                         .bold()
                     TextField("e.g. Cable, Netflix", text: $billname)
+                        .font(.title2)
+                        .focused($focusedField, equals: .billname)
                         .textFieldStyle(.roundedBorder)
                 }
-                VStack(alignment: .leading){
+        
+                Group{
                     Text("Bill Amount:")
+                        .font(.title)
                         .bold()
                     TextField(currencyManagerUS.string, text: $currencyManagerUS.string)
+                        .font(.title2)
+                        .focused($focusedField, equals: .amount)
                         .keyboardType(.numberPad)
-                        .multilineTextAlignment(.trailing)
                         .onChange(of: currencyManagerUS.string, perform: currencyManagerUS.valueChanged)
+                        .textFieldStyle(.roundedBorder)
                 }
-                Text("\(currencyManagerUS.string)")
-                VStack(alignment: .leading){
-                    Text("Due Date:")
-                        .bold()
+                
+                Group{
                     DatePicker(selection: $dueDate, in: Date()..., displayedComponents: .date, label: { Text("Due Date") })
                         .datePickerStyle(.graphical)
                 }
-                VStack{
+                Group{
                     Toggle("Notify a week before", isOn: $isWeekNotification)
+                        .font(.title2)
                         .disabled(is5DaysNotification)
                     
                     Toggle("Notify 5 days before", isOn: $is5DaysNotification)
+                        .font(.title2)
                         .disabled(isWeekNotification)
                 }
-                
-                Button("Add Bill") {
-                    // ------ PUT THIS LOGIC IN MVVM
+                Button {
                     addItem()
                     
                     if is5DaysNotification {
-                        NM.setForFiveDays(dueDate: dueDate, billName: billname, amount: Double(amount))
+                        NM.setForFiveDays(dueDate: dueDate, billName: billname, amount: currencyManagerUS.string)
                     }else if isWeekNotification {
                     }
                     presentationMode.wrappedValue.dismiss()
-                    // -------- END
+                } label: {
+                    Text("Add Bill")
+                        .frame(maxWidth: .infinity)
+                        .padding(5)
                 }
                 .padding()
-                .frame(maxWidth: .infinity)
                 .buttonStyle(.borderedProminent)
             }
-            .padding()
+            
+        }
+        .toolbar {
+            ToolbarItem(placement: .keyboard) {
+                Button("Done") {
+                    focusedField = nil
+                }
+            }
         }
         .navigationBarTitle("Add a Bill")
+
         
        
     }
