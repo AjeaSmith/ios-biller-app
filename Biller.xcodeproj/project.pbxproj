@@ -24,6 +24,8 @@
 		95D4403A290E762100B90D9A /* BillM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95D44038290E762100B90D9A /* BillM.xcdatamodeld */; };
 		95D4403D290E79DB00B90D9A /* BillEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D4403B290E79DB00B90D9A /* BillEntity+CoreDataClass.swift */; };
 		95D4403E290E79DB00B90D9A /* BillEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D4403C290E79DB00B90D9A /* BillEntity+CoreDataProperties.swift */; };
+		95D44040290F32EC00B90D9A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D4403F290F32EC00B90D9A /* Launch Screen.storyboard */; };
+		95D44042290F348500B90D9A /* LandingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D44041290F348500B90D9A /* LandingPageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		95D44039290E762100B90D9A /* BillM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BillM.xcdatamodel; sourceTree = "<group>"; };
 		95D4403B290E79DB00B90D9A /* BillEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BillEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		95D4403C290E79DB00B90D9A /* BillEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BillEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		95D4403F290F32EC00B90D9A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		95D44041290F348500B90D9A /* LandingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +82,10 @@
 			isa = PBXGroup;
 			children = (
 				95D44038290E762100B90D9A /* BillM.xcdatamodeld */,
-				9528B8EF290C688D0078DA53 /* Currency */,
+				95D4403F290F32EC00B90D9A /* Launch Screen.storyboard */,
 				9528B8BC290927BB0078DA53 /* BillerApp.swift */,
+				95D44041290F348500B90D9A /* LandingPageView.swift */,
+				9528B8EF290C688D0078DA53 /* Currency */,
 				9528B8D0290928470078DA53 /* Models */,
 				9528B8CF290928400078DA53 /* Views */,
 				9528B8C0290927BC0078DA53 /* Assets.xcassets */,
@@ -201,6 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95D44040290F32EC00B90D9A /* Launch Screen.storyboard in Resources */,
 				9528B8C4290927BC0078DA53 /* Preview Assets.xcassets in Resources */,
 				9528B8C1290927BC0078DA53 /* Assets.xcassets in Resources */,
 			);
@@ -220,6 +227,7 @@
 				9528B8F1290C689F0078DA53 /* CurrencyManager.swift in Sources */,
 				9528B8DC2909291B0078DA53 /* AddBillView.swift in Sources */,
 				9528B8BD290927BB0078DA53 /* BillerApp.swift in Sources */,
+				95D44042290F348500B90D9A /* LandingPageView.swift in Sources */,
 				9528B8E229092A370078DA53 /* CalendarViewRepresentable.swift in Sources */,
 				9528B8E029092A180078DA53 /* CalendarView.swift in Sources */,
 				9528B8D6290928E70078DA53 /* RootView.swift in Sources */,
@@ -358,9 +366,11 @@
 				DEVELOPMENT_TEAM = A7DBQ3M5DG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -389,9 +399,11 @@
 				DEVELOPMENT_TEAM = A7DBQ3M5DG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";

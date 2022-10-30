@@ -17,8 +17,7 @@ struct RootView: View {
     }
     
     var body: some View {
-        NavigationView{
-           
+        VStack{
             TabView() {
                 BillsView()
                     .tabItem {
@@ -44,7 +43,9 @@ struct RootView: View {
                         }
                     }
             }
-            
         }
+        .navigationBarTitle("")
+        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true)
     }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AddBillView: View {
+    
     private enum Field: Int, CaseIterable {
         case billname, amount
     }
