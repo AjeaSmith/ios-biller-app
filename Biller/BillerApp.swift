@@ -17,3 +17,13 @@ struct BillerApp: App {
         }
     }
 }
+
+//public var unWrappedDueDate: Date {
+//    return dueDate ?? Date()
+//}
+//public var unWrappedName: String {
+//    return name ?? "Unknown bill"
+//}
+//public var unWrappedAmount: String {
+//    return amount ?? "Unknown amount"
+//}

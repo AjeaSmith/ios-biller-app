@@ -19,7 +19,7 @@ struct BillDetailView: View {
             HStack{
                 Text(bill.unWrappedName)
                     .font(.largeTitle)
-                Spacer()
+                Spacer(minLength: 20)
                 
                 Button {
                     isPaid.toggle()
@@ -35,10 +35,16 @@ struct BillDetailView: View {
                 }.disabled(isPaid)
                 
             }
-            Text("Amount: \(bill.unWrappedAmount)")
-            Text("Due Date: \(bill.unWrappedDueDate.formatted(date: .abbreviated, time: .omitted))")
-            
+            HStack{
+                Text("Amount:").fontWeight(.semibold)
+                Text("\(bill.unWrappedAmount)")
+            }
+            HStack{
+                Text("Due Date:").fontWeight(.semibold)
+                Text(bill.unWrappedDueDate.formatted(date: .abbreviated, time: .omitted))
+            }
             Spacer()
+            
         }.padding()
     }
     func removeBill() {

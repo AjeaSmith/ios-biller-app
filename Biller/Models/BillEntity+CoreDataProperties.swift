@@ -2,7 +2,7 @@
 //  BillEntity+CoreDataProperties.swift
 //  Biller
 //
-//  Created by Ajea Smith on 10/28/22.
+//  Created by Ajea Smith on 10/30/22.
 //
 //
 
@@ -16,9 +16,10 @@ extension BillEntity {
         return NSFetchRequest<BillEntity>(entityName: "BillEntity")
     }
 
-    @NSManaged public var name: String?
     @NSManaged public var amount: String?
     @NSManaged public var dueDate: Date?
+    @NSManaged public var isPaid: Bool
+    @NSManaged public var name: String?
 
     public var unWrappedDueDate: Date {
         return dueDate ?? Date()

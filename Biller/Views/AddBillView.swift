@@ -74,6 +74,7 @@ struct AddBillView: View {
                     if is5DaysNotification {
                         NM.setForFiveDays(dueDate: dueDate, billName: billname, amount: currencyManagerUS.string)
                     }else if isWeekNotification {
+                        
                     }
                     presentationMode.wrappedValue.dismiss()
                 } label: {
