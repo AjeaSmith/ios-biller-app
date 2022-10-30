@@ -25,7 +25,7 @@ struct CalendarViewRepresentable: UIViewRepresentable {
                                                  blue: 0, alpha: 0)
         calendar.appearance.titleTodayColor = .black
         calendar.appearance.selectionColor = .orange
-        calendar.appearance.eventDefaultColor = .red
+        calendar.appearance.eventDefaultColor = .white
         calendar.appearance.titleTodayColor = .blue
         calendar.appearance.titleFont = .boldSystemFont(ofSize: 24)
         calendar.appearance.titleWeekendColor = .systemOrange
@@ -35,7 +35,7 @@ struct CalendarViewRepresentable: UIViewRepresentable {
             weight: .black)
         calendar.appearance.headerTitleColor = .darkGray
         calendar.appearance.headerDateFormat = "MMMM"
-        calendar.scrollDirection = .horizontal
+        calendar.scrollDirection = .vertical
         calendar.scope = .month
         
         calendar.delegate = context.coordinator
@@ -45,7 +45,6 @@ struct CalendarViewRepresentable: UIViewRepresentable {
     
     func updateUIView(_ uiView: FSCalendar, context: Context) {
         uiView.reloadData()
-        print("It changed, \(bills)")
     }
     func makeCoordinator() -> Coordinator {
         Coordinator(self)

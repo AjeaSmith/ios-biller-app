@@ -11,25 +11,40 @@ import CoreData
 struct RootView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @State private var isPresented = false
+    
+    init() {
+        UITabBar.appearance().backgroundColor = UIColor.systemGray5// custom color.
+    }
+    
     var body: some View {
         NavigationView{
-            
+           
             TabView() {
                 BillsView()
                     .tabItem {
-                        Image(systemName: "list.dash")
+                        VStack{
+                            Text("Bills")
+                            Image(systemName: "list.dash")
+                        }.padding(5)
                     }
                 
                 CalendarView()
                     .tabItem {
-                        Image(systemName: "calendar")
+                        VStack {
+                            Text("Calendar")
+                            Image(systemName: "calendar")
+                        }
                     }
                 
                 SettingsView()
                     .tabItem {
-                        Image(systemName: "gearshape")
+                        VStack {
+                            Text("Settings")
+                            Image(systemName: "gearshape")
+                        }
                     }
             }
+            
         }
     }
 }

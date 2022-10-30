@@ -12,12 +12,34 @@ struct BillDetailView: View {
     
     let bill: BillEntity
     
+    @Binding var isPaid: Bool
+    
     var body: some View {
-        VStack{
-            Text(bill.unWrappedName)
-                .font(.largeTitle)
-            Button("Delete Bill", action: removeBill)
-        }
+        VStack(alignment: .leading){
+            HStack{
+                Text(bill.unWrappedName)
+                    .font(.largeTitle)
+                Spacer()
+                
+                Button {
+                    isPaid.toggle()
+                } label: {
+                    if isPaid {
+                        HStack {
+                            Image(systemName: "checkmark")
+                            Text("PAID")
+                        }
+                    }else{
+                        Text("MARK AS PAID").foregroundColor(Color(.systemOrange))
+                    }
+                }.disabled(isPaid)
+                
+            }
+            Text("Amount: \(bill.unWrappedAmount)")
+            Text("Due Date: \(bill.unWrappedDueDate.formatted(date: .abbreviated, time: .omitted))")
+            
+            Spacer()
+        }.padding()
     }
     func removeBill() {
         viewContext.delete(bill)
