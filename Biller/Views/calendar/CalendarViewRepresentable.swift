@@ -36,6 +36,7 @@ struct CalendarViewRepresentable: UIViewRepresentable {
         calendar.appearance.headerTitleColor = .darkGray
         calendar.appearance.headerDateFormat = "MMMM"
         calendar.scrollDirection = .vertical
+        
         calendar.scope = .month
         
         calendar.delegate = context.coordinator
