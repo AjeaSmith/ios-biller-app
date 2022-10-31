@@ -21,11 +21,13 @@
 		9528B8E229092A370078DA53 /* CalendarViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8E129092A370078DA53 /* CalendarViewRepresentable.swift */; };
 		9528B8E8290B66450078DA53 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8E7290B66450078DA53 /* NotificationsManager.swift */; };
 		9528B8F1290C689F0078DA53 /* CurrencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8F0290C689F0078DA53 /* CurrencyManager.swift */; };
+		9557C51A290F8CC200B1D02C /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9557C519290F8CC200B1D02C /* Fonts.swift */; };
 		95D4403A290E762100B90D9A /* BillM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95D44038290E762100B90D9A /* BillM.xcdatamodeld */; };
 		95D4403D290E79DB00B90D9A /* BillEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D4403B290E79DB00B90D9A /* BillEntity+CoreDataClass.swift */; };
 		95D4403E290E79DB00B90D9A /* BillEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D4403C290E79DB00B90D9A /* BillEntity+CoreDataProperties.swift */; };
-		95D44040290F32EC00B90D9A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D4403F290F32EC00B90D9A /* Launch Screen.storyboard */; };
 		95D44042290F348500B90D9A /* LandingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D44041290F348500B90D9A /* LandingPageView.swift */; };
+		95D44046290F81EB00B90D9A /* Lora-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95D44044290F81EB00B90D9A /* Lora-Regular.ttf */; };
+		95D44047290F81EB00B90D9A /* Lora-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95D44045290F81EB00B90D9A /* Lora-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,11 +45,14 @@
 		9528B8E129092A370078DA53 /* CalendarViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewRepresentable.swift; sourceTree = "<group>"; };
 		9528B8E7290B66450078DA53 /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
 		9528B8F0290C689F0078DA53 /* CurrencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyManager.swift; sourceTree = "<group>"; };
+		9557C519290F8CC200B1D02C /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		95D44039290E762100B90D9A /* BillM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BillM.xcdatamodel; sourceTree = "<group>"; };
 		95D4403B290E79DB00B90D9A /* BillEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BillEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		95D4403C290E79DB00B90D9A /* BillEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BillEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		95D4403F290F32EC00B90D9A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		95D44041290F348500B90D9A /* LandingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageView.swift; sourceTree = "<group>"; };
+		95D44044290F81EB00B90D9A /* Lora-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Regular.ttf"; sourceTree = "<group>"; };
+		95D44045290F81EB00B90D9A /* Lora-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Medium.ttf"; sourceTree = "<group>"; };
+		95D44048290F828600B90D9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,17 +86,17 @@
 		9528B8BB290927BB0078DA53 /* Biller */ = {
 			isa = PBXGroup;
 			children = (
-				95D44038290E762100B90D9A /* BillM.xcdatamodeld */,
-				95D4403F290F32EC00B90D9A /* Launch Screen.storyboard */,
+				95D44048290F828600B90D9A /* Info.plist */,
 				9528B8BC290927BB0078DA53 /* BillerApp.swift */,
-				95D44041290F348500B90D9A /* LandingPageView.swift */,
-				9528B8EF290C688D0078DA53 /* Currency */,
 				9528B8D0290928470078DA53 /* Models */,
 				9528B8CF290928400078DA53 /* Views */,
+				9557C518290F8C2B00B1D02C /* ViewModels */,
+				95D44043290F816B00B90D9A /* fonts */,
+				9557C517290F8C0D00B1D02C /* Helpers */,
+				95D44038290E762100B90D9A /* BillM.xcdatamodeld */,
 				9528B8C0290927BC0078DA53 /* Assets.xcassets */,
 				9528B8C5290927BC0078DA53 /* Persistence.swift */,
 				9528B8C2290927BC0078DA53 /* Preview Content */,
-				9528B8E7290B66450078DA53 /* NotificationsManager.swift */,
 			);
 			path = Biller;
 			sourceTree = "<group>";
@@ -107,6 +112,7 @@
 		9528B8CF290928400078DA53 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				95D44041290F348500B90D9A /* LandingPageView.swift */,
 				9528B8D5290928E70078DA53 /* RootView.swift */,
 				9528B8D7290929010078DA53 /* BillsView.swift */,
 				9528B8D92909290D0078DA53 /* SettingsView.swift */,
@@ -135,12 +141,30 @@
 			path = calendar;
 			sourceTree = "<group>";
 		};
-		9528B8EF290C688D0078DA53 /* Currency */ = {
+		9557C517290F8C0D00B1D02C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9557C519290F8CC200B1D02C /* Fonts.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9557C518290F8C2B00B1D02C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				9528B8F0290C689F0078DA53 /* CurrencyManager.swift */,
+				9528B8E7290B66450078DA53 /* NotificationsManager.swift */,
 			);
-			path = Currency;
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		95D44043290F816B00B90D9A /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				95D44045290F81EB00B90D9A /* Lora-Medium.ttf */,
+				95D44044290F81EB00B90D9A /* Lora-Regular.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,7 +231,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95D44040290F32EC00B90D9A /* Launch Screen.storyboard in Resources */,
+				95D44047290F81EB00B90D9A /* Lora-Medium.ttf in Resources */,
+				95D44046290F81EB00B90D9A /* Lora-Regular.ttf in Resources */,
 				9528B8C4290927BC0078DA53 /* Preview Assets.xcassets in Resources */,
 				9528B8C1290927BC0078DA53 /* Assets.xcassets in Resources */,
 			);
@@ -220,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9557C51A290F8CC200B1D02C /* Fonts.swift in Sources */,
 				9528B8DA2909290D0078DA53 /* SettingsView.swift in Sources */,
 				9528B8C6290927BC0078DA53 /* Persistence.swift in Sources */,
 				95D4403A290E762100B90D9A /* BillM.xcdatamodeld in Sources */,
@@ -366,6 +392,7 @@
 				DEVELOPMENT_TEAM = A7DBQ3M5DG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Biller/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -399,6 +426,7 @@
 				DEVELOPMENT_TEAM = A7DBQ3M5DG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Biller/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
