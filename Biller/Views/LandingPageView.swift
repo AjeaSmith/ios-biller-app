@@ -44,8 +44,6 @@ struct LandingPageView: View {
                                 Image(systemName: "arrow.right")
                                     .font(.system(size: 14))
                                     .foregroundColor(Color("landing-background"))
-//                                Image("landing-arrow")
-//                                    .frame(width: 14, height: 14)
                                 Spacer()
                             }
                         }

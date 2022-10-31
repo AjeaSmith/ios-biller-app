@@ -13,8 +13,13 @@ class NotificationsManager {
     let calendar = Calendar.current
     
     let dateFormatter = DateFormatter()
-
-    func setForFiveDays(dueDate: Date, billName: String, amount: String) {
+    
+    enum NotificationType {
+        case fiveDays
+        case week
+    }
+    
+    func setNotifications(dueDate: Date, billName: String, amount: String, notificationType: NotificationType) {
         dateFormatter.dateFormat = "MMM d"
         
         let content = UNMutableNotificationContent()
@@ -22,19 +27,32 @@ class NotificationsManager {
         content.body = "Amount of \(amount) is due \(dateFormatter.string(from: dueDate))"
         content.sound = UNNotificationSound.default
         
-        let fiveDaysTrigger = calendar.date(byAdding: .day, value: -5, to: dueDate)!
-        
-        let fiveDaysDateComponents = calendar.dateComponents([.day], from: fiveDaysTrigger)
-        
-        // it should be trigger based on user selection, either 5 days before due date or week.
-//        let trigger = UNCalendarNotificationTrigger(dateMatching: fiveDaysDateComponents, repeats: false)
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
-        
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-        
-        UNUserNotificationCenter.current().add(request)
+        switch (notificationType) {
+        case .fiveDays:
+            let fiveDaysTrigger = calendar.date(byAdding: .day, value: -5, to: dueDate)!
+            
+            let fiveDaysDateComponents = calendar.dateComponents([.day], from: fiveDaysTrigger)
+            
+            // it should be trigger based on user selection, either 5 days before due date or week.
+            //        let trigger = UNCalendarNotificationTrigger(dateMatching: fiveDaysDateComponents, repeats: false)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+            
+            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+            
+            UNUserNotificationCenter.current().add(request)
+            
+        case .week:
+            let weekTrigger = calendar.date(byAdding: .day, value: -7, to: dueDate)!
+            
+            let weekTriggerDateComponents = calendar.dateComponents([.day], from: weekTrigger)
+            
+            // it should be trigger based on user selection, either 5 days before due date or week.
+            //        let trigger = UNCalendarNotificationTrigger(dateMatching: fiveDaysDateComponents, repeats: false)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+            
+            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+            
+            UNUserNotificationCenter.current().add(request)
+        }
     }
-//    func setForAWeek(<#parameters#>) -> <#return type#> {
-//        <#function body#>
-//    }
 }

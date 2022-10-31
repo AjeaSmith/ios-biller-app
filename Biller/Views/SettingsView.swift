@@ -9,25 +9,18 @@ import SwiftUI
 import UserNotifications
 
 struct SettingsView: View {
-    let NM = NotificationsManager()
-    
+    @EnvironmentObject var biller: BillerManager
     @State private var isEnabled = false
+    let NM = NotificationsManager()
     
     var body: some View {
         VStack{
             Toggle("Enable Notifications", isOn: $isEnabled)
             Button("Confirm") {
                 if isEnabled {
-                    UNUserNotificationCenter.current().requestAuthorization(options: [.sound, .alert, .badge]) { success, error in
-                        if success {
-                            print("Access Granted!")
-                        } else if let error = error {
-                            print(error.localizedDescription)
-                        }
-                    }
+                    biller.enableNotifications()
                 }else {
-                    UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-                }
+                    biller.disableNotifications()                 }
             }
             .buttonStyle(.borderedProminent)
         }

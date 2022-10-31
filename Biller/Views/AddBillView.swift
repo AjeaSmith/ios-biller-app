@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AddBillView: View {
+    @EnvironmentObject var biller: BillerManager
     
     private enum Field: Int, CaseIterable {
         case billname, amount
@@ -25,6 +26,7 @@ struct AddBillView: View {
     @State private var billname = ""
     @State private var amount = 0
     @State private var dueDate = Date()
+    
     @State private var isWeekNotification = false
     @State private var is5DaysNotification = false
     
@@ -60,21 +62,27 @@ struct AddBillView: View {
                     DatePicker(selection: $dueDate, in: Date()..., displayedComponents: .date, label: { Text("Due Date") })
                         .datePickerStyle(.graphical)
                 }
-                Group{
-                    Toggle("Notify a week before", isOn: $isWeekNotification)
-                        .font(.title2)
-                        .disabled(is5DaysNotification)
-                    
-                    Toggle("Notify 5 days before", isOn: $is5DaysNotification)
-                        .font(.title2)
-                        .disabled(isWeekNotification)
+                if biller.isNotificationsEnabled {
+                    Group{
+                        Toggle("Notify a week before", isOn: $isWeekNotification)
+                            .font(.title2)
+                            .disabled(is5DaysNotification)
+                        
+                        Toggle("Notify 5 days before", isOn: $is5DaysNotification)
+                            .font(.title2)
+                            .disabled(isWeekNotification)
+                    }
                 }
                 Button {
                     addItem()
                     
                     if is5DaysNotification {
-                        NM.setForFiveDays(dueDate: dueDate, billName: billname, amount: currencyManagerUS.string)
+                        
+                        NM.setNotifications(dueDate: dueDate, billName: billname, amount: currencyManagerUS.string, notificationType: .fiveDays)
+                        
                     }else if isWeekNotification {
+                        
+                        NM.setNotifications(dueDate: dueDate, billName: billname, amount: currencyManagerUS.string, notificationType: .week)
                         
                     }
                     presentationMode.wrappedValue.dismiss()

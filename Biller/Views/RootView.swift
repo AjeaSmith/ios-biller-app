@@ -9,11 +9,12 @@ import SwiftUI
 import CoreData
 
 struct RootView: View {
+    @StateObject var biller = BillerManager()
     @Environment(\.managedObjectContext) private var viewContext
     @State private var isPresented = false
     
     init() {
-        UITabBar.appearance().backgroundColor = UIColor.systemGray5// custom color.
+        UITabBar.appearance().backgroundColor = UIColor.systemGray5
     }
     
     var body: some View {
@@ -44,6 +45,7 @@ struct RootView: View {
                     }
             }
         }
+        .environmentObject(biller)
         .navigationBarTitle("")
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
