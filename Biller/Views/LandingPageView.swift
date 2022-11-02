@@ -12,15 +12,15 @@ struct LandingPageView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color("landing-background")
+                Color("primary-color")
                 VStack(spacing: 50){
                     Image(systemName: "dollarsign.circle")
                         .font(.system(size: 100))
-                        .foregroundColor(Color("landing-text"))
+                        .foregroundColor(Color("secondary-color"))
                     
                     Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor")
                         .font(Font.landingText)
-                        .foregroundColor(Color("landing-text"))
+                        .foregroundColor(Color("secondary-color"))
                         .frame(width:240)
                         .multilineTextAlignment(.center)
                     
@@ -36,14 +36,14 @@ struct LandingPageView: View {
                                 Spacer()
                                 Text("Get Started")
                                     .font(Font.landingText)
-                                    .foregroundColor(Color("landing-button-text"))
+                                    .foregroundColor(Color("primary-color"))
                                     .padding(.trailing, 5)
                                     .navigationBarHidden(true)
                                     .navigationTitle("")
-
-                                Image(systemName: "arrow.right")
+                                Image(systemName: "chevron.right")
                                     .font(.system(size: 14))
-                                    .foregroundColor(Color("landing-background"))
+                                    .foregroundColor(Color("primary-color"))
+                                    
                                 Spacer()
                             }
                         }

@@ -12,7 +12,7 @@ struct BillDetailView: View {
     
     let bill: BillEntity
     
-    @Binding var isPaid: Bool
+//    @Binding var isPaid: Bool
     
     var body: some View {
         VStack(alignment: .leading){
@@ -22,9 +22,9 @@ struct BillDetailView: View {
                 Spacer(minLength: 20)
                 
                 Button {
-                    isPaid.toggle()
+                    bill.isPaid.toggle()
                 } label: {
-                    if isPaid {
+                    if bill.isPaid {
                         HStack {
                             Image(systemName: "checkmark")
                             Text("PAID")
@@ -32,7 +32,7 @@ struct BillDetailView: View {
                     }else{
                         Text("MARK AS PAID").foregroundColor(Color(.systemOrange))
                     }
-                }.disabled(isPaid)
+                }.disabled(bill.isPaid)
                 
             }
             HStack{

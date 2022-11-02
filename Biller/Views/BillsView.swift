@@ -12,63 +12,37 @@ struct BillsView: View {
 
     @FetchRequest(sortDescriptors: [NSSortDescriptor(key: "dueDate",ascending: true)]) private var bills: FetchedResults<BillEntity>
     
-    @State private var isPaid: Bool = false
-    
     var body: some View {
         NavigationView {
-            List{
-                Section(content: {
-                    ForEach(bills, id: \.self){ bill in
-                        NavigationLink {
-                            BillDetailView(bill: bill, isPaid: $isPaid)
-                        } label: {
-                            HStack{
-                                HStack{
-                                    VStack(alignment: .leading){
-                                        HStack{
-                                            Text(bill.unWrappedName)
-                                                .font(.title2)
-                                            isPaid ? Text("PAID!")
-                                                .foregroundColor(Color(.systemGreen))
-                                                .font(Font.system(size: 12)): nil
-                                        }
-                                        Text("Due on \(bill.unWrappedDueDate.formatted(.dateTime.weekday(.wide).day().month()))")
-                                        
-                                            .foregroundColor(.secondary)
-                                    }
-                                }
-                                Spacer()
-                                VStack{
-                                    Text("\(bill.unWrappedAmount)")
-                                }
-                            }
-                            
-                        }
-                        
-                    }
-                    .onDelete(perform: removeItems)
-                }, header: {
-                    Text("Unpaid Bills")
-                        .font(Font.system(size: 20))
-                        .foregroundColor(.orange)
-                })
-            }
-            .navigationTitle("Upcoming Bills")
-            .toolbar {
-                ToolbarItem{
-                    NavigationLink(destination: AddBillView()) {
-                        Image(systemName: "plus")
-                    }
+            VStack {
+                ForEach(bills, id: \.self) { bill in
+                    BillCard(bill: bill)
+                    BillCard(bill: bill)
+                    BillCard(bill: bill)
                 }
+                .onDelete(perform: removeItems)
+                Spacer()
             }
-            .listStyle(.grouped)
-            
-            Spacer()
-            
-            .navigationTitle("Bills")
-            .background(Color(.systemGray6))
+            .navigationBarTitle(Text("Upcoming Bills"))
+            .background(Color("list-background"))
         }
     }
+//        NavigationView {
+//            List{
+//                ForEach(bills, id: \.self) { bill in
+//                    BillCard(bill: bill)
+//                }
+//                .onDelete(perform: removeItems)
+//            }
+//            .navigationTitle("Upcoming Bills")
+//            .toolbar {
+//                ToolbarItem{
+//                    NavigationLink(destination: AddBillView()) {
+//                        Image(systemName: "plus")
+//                    }
+//                }
+//            }
+//        }
     
     func removeItems(at offsets: IndexSet) {
         for index in offsets {
