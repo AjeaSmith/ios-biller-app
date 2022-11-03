@@ -23,26 +23,17 @@ struct BillsView: View {
                 .onDelete(perform: removeItems)
                 Spacer()
             }
+            .toolbar {
+                ToolbarItem{
+                    NavigationLink(destination: AddBillView()) {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
             .navigationBarTitle(Text("Upcoming Bills"))
             .background(Color("list-background"))
         }
     }
-//        NavigationView {
-//            List{
-//                ForEach(bills, id: \.self) { bill in
-//                    BillCard(bill: bill)
-//                }
-//                .onDelete(perform: removeItems)
-//            }
-//            .navigationTitle("Upcoming Bills")
-//            .toolbar {
-//                ToolbarItem{
-//                    NavigationLink(destination: AddBillView()) {
-//                        Image(systemName: "plus")
-//                    }
-//                }
-//            }
-//        }
     
     func removeItems(at offsets: IndexSet) {
         for index in offsets {

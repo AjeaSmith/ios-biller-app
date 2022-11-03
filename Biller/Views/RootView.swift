@@ -10,7 +10,6 @@ import CoreData
 
 struct RootView: View {
     @StateObject var biller = BillerManager()
-    @Environment(\.managedObjectContext) private var viewContext
     @State private var isPresented = false
     
     init() {
