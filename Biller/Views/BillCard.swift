@@ -13,15 +13,16 @@ struct BillCard: View {
     var body: some View {
         NavigationLink(destination: BillDetailView(bill: bill)) {
             ZStack {
-                Rectangle()
-                    .frame(height: 60)
-                    .cornerRadius(5)
-                    .shadow(color: Color("shadow2"), radius: 4, x: 0, y: 2)
+                RoundedRectangle(cornerRadius: 5)
+                .fill(Color(red: 0.97, green: 1, blue: 1))
+                .frame(height: 91)
+                .shadow(radius: 7, y: 2)
                 HStack{
                     Text(bill.unWrappedName)
                         .foregroundColor(.black)
                     Text("hi")
                 }
+
             }
             .font(Font.landingText)
             .padding(.horizontal)

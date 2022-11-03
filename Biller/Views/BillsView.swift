@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct BillsView: View {
+    
     @Environment(\.managedObjectContext) private var viewContext
 
-    @FetchRequest(sortDescriptors: [NSSortDescriptor(key: "dueDate",ascending: true)]) private var bills: FetchedResults<BillEntity>
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(key: "dueDate", ascending: true)]) private var bills: FetchedResults<BillEntity>
     
     var body: some View {
         NavigationView {
@@ -23,6 +24,7 @@ struct BillsView: View {
                 .onDelete(perform: removeItems)
                 Spacer()
             }
+            .padding(.top, 20)
             .toolbar {
                 ToolbarItem{
                     NavigationLink(destination: AddBillView()) {
