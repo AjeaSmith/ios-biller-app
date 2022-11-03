@@ -12,7 +12,7 @@ import FSCalendar
 struct CalendarViewRepresentable: UIViewRepresentable {
     typealias UIViewType = FSCalendar
     
-    var calendar: FSCalendar
+    var calendar = FSCalendar()
     
     @Binding var selectedDate: Date
     @Binding var presentModal: Bool

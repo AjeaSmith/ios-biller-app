@@ -9,8 +9,6 @@ import SwiftUI
 import FSCalendar
 
 struct CalendarView: View {
-    let calendar = FSCalendar()
-    @Environment(\.managedObjectContext) private var viewContext
     
     @State var selectedDate: Date = Date()
     @State var presentModal = false
@@ -20,7 +18,7 @@ struct CalendarView: View {
     
     
     var body: some View {
-        CalendarViewRepresentable(calendar: calendar, selectedDate: $selectedDate, presentModal: $presentModal)
+        CalendarViewRepresentable(selectedDate: $selectedDate, presentModal: $presentModal)
             .sheet(isPresented: $presentModal) {
                 Text("\(billName), \(billDueDate.formatted(date: .complete, time: .omitted))")
             }

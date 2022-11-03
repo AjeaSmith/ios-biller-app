@@ -18,8 +18,6 @@ struct BillsView: View {
             VStack {
                 ForEach(bills, id: \.self) { bill in
                     BillCard(bill: bill)
-                    BillCard(bill: bill)
-                    BillCard(bill: bill)
                 }
                 .onDelete(perform: removeItems)
                 Spacer()
