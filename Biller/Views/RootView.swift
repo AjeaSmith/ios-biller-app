@@ -10,7 +10,7 @@ import CoreData
 
 struct RootView: View {
     
-    @StateObject var biller = BillerManager()
+    @StateObject var billVM = BillViewModel()
     
     @State private var isPresented = false
     
@@ -20,7 +20,7 @@ struct RootView: View {
     
     var body: some View {
        TabBarView()
-        .environmentObject(biller)
+        .environmentObject(billVM)
         .navigationBarTitle("")
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)

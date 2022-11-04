@@ -8,17 +8,11 @@
 import SwiftUI
 
 struct AddBillView: View {
-    @EnvironmentObject var biller: BillerManager
+    @EnvironmentObject var billVM: BillViewModel
     
     private enum Field: Int, CaseIterable {
         case billname, amount
     }
-    private let NM = NotificationsManager()
-    
-    @ObservedObject private var currencyManagerUS = CurrencyManager(
-        amount: 0,
-        locale: .current
-    )
     
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentationMode
@@ -50,11 +44,11 @@ struct AddBillView: View {
                     Text("Bill Amount:")
                         .font(.title)
                         .bold()
-                    TextField(currencyManagerUS.string, text: $currencyManagerUS.string)
+                    TextField(billVM.string, text: $billVM.string)
                         .font(.title2)
                         .focused($focusedField, equals: .amount)
                         .keyboardType(.numberPad)
-                        .onChange(of: currencyManagerUS.string, perform: currencyManagerUS.valueChanged)
+                        .onChange(of: billVM.string, perform: billVM.valueChanged)
                         .textFieldStyle(.roundedBorder)
                 }
                 
@@ -62,7 +56,7 @@ struct AddBillView: View {
                     DatePicker(selection: $dueDate, in: Date()..., displayedComponents: .date, label: { Text("Due Date") })
                         .datePickerStyle(.graphical)
                 }
-                if biller.isNotificationsEnabled {
+                if billVM.isNotificationsEnabled {
                     Group{
                         Toggle("Notify a week before", isOn: $isWeekNotification)
                             .font(.title2)
@@ -78,11 +72,11 @@ struct AddBillView: View {
                     
                     if is5DaysNotification {
                         
-                        NM.setNotifications(dueDate: dueDate, billName: billname, amount: currencyManagerUS.string, notificationType: .fiveDays)
+                        billVM.setNotifications(dueDate: dueDate, billName: billname, amount: billVM.string, notificationType: .fiveDays)
                         
                     }else if isWeekNotification {
                         
-                        NM.setNotifications(dueDate: dueDate, billName: billname, amount: currencyManagerUS.string, notificationType: .week)
+                        billVM.setNotifications(dueDate: dueDate, billName: billname, amount: billVM.string, notificationType: .week)
                         
                     }
                     presentationMode.wrappedValue.dismiss()
@@ -112,7 +106,7 @@ struct AddBillView: View {
         let newItem = BillEntity(context: viewContext)
         newItem.dueDate = dueDate
         newItem.name = billname
-        newItem.amount = currencyManagerUS.string
+        newItem.amount = billVM.string
         
         do {
             try viewContext.save()

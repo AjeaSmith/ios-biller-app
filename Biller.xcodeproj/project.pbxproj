@@ -19,11 +19,9 @@
 		9528B8DE290929300078DA53 /* BillDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8DD290929300078DA53 /* BillDetailView.swift */; };
 		9528B8E029092A180078DA53 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8DF29092A180078DA53 /* CalendarView.swift */; };
 		9528B8E229092A370078DA53 /* CalendarViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8E129092A370078DA53 /* CalendarViewRepresentable.swift */; };
-		9528B8E8290B66450078DA53 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8E7290B66450078DA53 /* NotificationsManager.swift */; };
-		9528B8F1290C689F0078DA53 /* CurrencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8F0290C689F0078DA53 /* CurrencyManager.swift */; };
 		9529564E2913FCAE0047ADFD /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9529564D2913FCAE0047ADFD /* TabBarView.swift */; };
 		9557C51A290F8CC200B1D02C /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9557C519290F8CC200B1D02C /* Fonts.swift */; };
-		9557C51C290FA69000B1D02C /* BillerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9557C51B290FA69000B1D02C /* BillerManager.swift */; };
+		9557C51C290FA69000B1D02C /* BillViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9557C51B290FA69000B1D02C /* BillViewModel.swift */; };
 		9557C51E2911667A00B1D02C /* BillCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9557C51D2911667A00B1D02C /* BillCard.swift */; };
 		95D4403A290E762100B90D9A /* BillM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95D44038290E762100B90D9A /* BillM.xcdatamodeld */; };
 		95D4403D290E79DB00B90D9A /* BillEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D4403B290E79DB00B90D9A /* BillEntity+CoreDataClass.swift */; };
@@ -46,11 +44,9 @@
 		9528B8DD290929300078DA53 /* BillDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailView.swift; sourceTree = "<group>"; };
 		9528B8DF29092A180078DA53 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		9528B8E129092A370078DA53 /* CalendarViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewRepresentable.swift; sourceTree = "<group>"; };
-		9528B8E7290B66450078DA53 /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
-		9528B8F0290C689F0078DA53 /* CurrencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyManager.swift; sourceTree = "<group>"; };
 		9529564D2913FCAE0047ADFD /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		9557C519290F8CC200B1D02C /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		9557C51B290FA69000B1D02C /* BillerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillerManager.swift; sourceTree = "<group>"; };
+		9557C51B290FA69000B1D02C /* BillViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillViewModel.swift; sourceTree = "<group>"; };
 		9557C51D2911667A00B1D02C /* BillCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillCard.swift; sourceTree = "<group>"; };
 		95D44039290E762100B90D9A /* BillM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BillM.xcdatamodel; sourceTree = "<group>"; };
 		95D4403B290E79DB00B90D9A /* BillEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BillEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -168,9 +164,7 @@
 		9557C518290F8C2B00B1D02C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				9528B8F0290C689F0078DA53 /* CurrencyManager.swift */,
-				9528B8E7290B66450078DA53 /* NotificationsManager.swift */,
-				9557C51B290FA69000B1D02C /* BillerManager.swift */,
+				9557C51B290FA69000B1D02C /* BillViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -264,19 +258,17 @@
 			files = (
 				9557C51A290F8CC200B1D02C /* Fonts.swift in Sources */,
 				9528B8DA2909290D0078DA53 /* SettingsView.swift in Sources */,
-				9557C51C290FA69000B1D02C /* BillerManager.swift in Sources */,
+				9557C51C290FA69000B1D02C /* BillViewModel.swift in Sources */,
 				9528B8C6290927BC0078DA53 /* Persistence.swift in Sources */,
 				95D4403A290E762100B90D9A /* BillM.xcdatamodeld in Sources */,
 				95D4403D290E79DB00B90D9A /* BillEntity+CoreDataClass.swift in Sources */,
 				9529564E2913FCAE0047ADFD /* TabBarView.swift in Sources */,
-				9528B8F1290C689F0078DA53 /* CurrencyManager.swift in Sources */,
 				9528B8DC2909291B0078DA53 /* AddBillView.swift in Sources */,
 				9528B8BD290927BB0078DA53 /* BillerApp.swift in Sources */,
 				95D44042290F348500B90D9A /* LandingPageView.swift in Sources */,
 				9528B8E229092A370078DA53 /* CalendarViewRepresentable.swift in Sources */,
 				9528B8E029092A180078DA53 /* CalendarView.swift in Sources */,
 				9528B8D6290928E70078DA53 /* RootView.swift in Sources */,
-				9528B8E8290B66450078DA53 /* NotificationsManager.swift in Sources */,
 				9557C51E2911667A00B1D02C /* BillCard.swift in Sources */,
 				9528B8DE290929300078DA53 /* BillDetailView.swift in Sources */,
 				9528B8D8290929010078DA53 /* BillsView.swift in Sources */,

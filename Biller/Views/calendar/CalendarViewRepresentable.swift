@@ -10,14 +10,13 @@ import SwiftUI
 import FSCalendar
 
 struct CalendarViewRepresentable: UIViewRepresentable {
-    typealias UIViewType = FSCalendar
     
     var calendar = FSCalendar()
     
     @Binding var selectedDate: Date
     @Binding var presentModal: Bool
     
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.dueDate)]) var bills: FetchedResults<BillEntity>
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(key: "dueDate", ascending: true)]) private var bills: FetchedResults<BillEntity>
     
     func makeUIView(context: Context) -> FSCalendar {
         calendar.appearance.todayColor = UIColor(displayP3Red: 0,
@@ -25,7 +24,7 @@ struct CalendarViewRepresentable: UIViewRepresentable {
                                                  blue: 0, alpha: 0)
         calendar.appearance.titleTodayColor = .black
         calendar.appearance.selectionColor = .orange
-        calendar.appearance.eventDefaultColor = .white
+        calendar.appearance.eventDefaultColor = .systemGreen
         calendar.appearance.titleTodayColor = .blue
         calendar.appearance.titleFont = .boldSystemFont(ofSize: 24)
         calendar.appearance.titleWeekendColor = .systemOrange
@@ -52,6 +51,7 @@ struct CalendarViewRepresentable: UIViewRepresentable {
     }
     
     class Coordinator: NSObject, FSCalendarDelegate, FSCalendarDataSource {
+        
         var parent: CalendarViewRepresentable
         
         init(_ parent: CalendarViewRepresentable) {
@@ -78,20 +78,8 @@ struct CalendarViewRepresentable: UIViewRepresentable {
         func maximumDate(for calendar: FSCalendar) -> Date {
             .distantFuture
         }
-        
         func minimumDate(for calendar: FSCalendar) -> Date {
             Date.now
-        }
-        
-        func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
-            let billExist = parent.bills.contains { $0.unWrappedDueDate.formatted(date: .complete,
-                                                                                  time: .omitted) == date.formatted(
-                                                                                    date: .complete, time: .omitted)}
-            if billExist {
-                return UIImage(systemName: "dollarsign.circle")?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
-            }else {
-                return  UIImage(systemName: "")
-            }
         }
         
     }
