@@ -47,13 +47,4 @@ struct BillDetailView: View {
             
         }.padding()
     }
-    func removeBill() {
-        viewContext.delete(bill)
-        
-        do{
-            try viewContext.save()
-        }catch{
-            print(error.localizedDescription)
-        }
-    }
 }

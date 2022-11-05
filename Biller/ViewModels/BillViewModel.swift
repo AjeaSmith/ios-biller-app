@@ -44,6 +44,7 @@ class BillViewModel: ObservableObject {
             lastValue = string
         }
     }
+//    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
     
     func setNotifications(dueDate: Date, billName: String, amount: String, notificationType: NotificationType) {
         dateFormatter.dateFormat = "MMM d"
@@ -58,10 +59,7 @@ class BillViewModel: ObservableObject {
             let fiveDaysTrigger = calendar.date(byAdding: .day, value: -5, to: dueDate)!
             
             let fiveDaysDateComponents = calendar.dateComponents([.day], from: fiveDaysTrigger)
-            
-            // it should be trigger based on user selection, either 5 days before due date or week.
-            //        let trigger = UNCalendarNotificationTrigger(dateMatching: fiveDaysDateComponents, repeats: false)
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+            let trigger = UNCalendarNotificationTrigger(dateMatching: fiveDaysDateComponents, repeats: false)
             
             let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
             
@@ -71,16 +69,14 @@ class BillViewModel: ObservableObject {
             let weekTrigger = calendar.date(byAdding: .day, value: -7, to: dueDate)!
             
             let weekTriggerDateComponents = calendar.dateComponents([.day], from: weekTrigger)
-            
-            // it should be trigger based on user selection, either 5 days before due date or week.
-            //        let trigger = UNCalendarNotificationTrigger(dateMatching: fiveDaysDateComponents, repeats: false)
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+            let trigger = UNCalendarNotificationTrigger(dateMatching: weekTriggerDateComponents, repeats: false)
             
             let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
             
             UNUserNotificationCenter.current().add(request)
         }
     }
+    
     func enableNotifications() {
         notificationCenter.requestAuthorization(options: [.sound, .alert, .badge]) { success, error in
             if success {
