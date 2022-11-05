@@ -19,7 +19,8 @@ struct SettingsView: View {
                 if isEnabled {
                     billVM.enableNotifications()
                 }else {
-                    billVM.disableNotifications()                 }
+                    billVM.disableNotifications()
+                }
             }
             .buttonStyle(.borderedProminent)
         }

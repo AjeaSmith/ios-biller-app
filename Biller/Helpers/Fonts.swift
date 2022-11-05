@@ -10,7 +10,7 @@ import SwiftUI
 
 extension Font {
     public static var landingText: Font {
-        return Font.custom("Lora-Medium", size: 14)
+        return Font.custom("Lora-Medium", size: 17)
     }
     public static var listingText1: Font {
         return Font.custom("Lora-Regular", size: 16)

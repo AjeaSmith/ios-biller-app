@@ -11,7 +11,7 @@ struct AddBillView: View {
     @EnvironmentObject var billVM: BillViewModel
     
     private enum Field: Int, CaseIterable {
-        case billname, amount
+        case amount
     }
     
     @Environment(\.managedObjectContext) private var viewContext
@@ -32,17 +32,16 @@ struct AddBillView: View {
             VStack(alignment: .leading){
                 Group{
                     Text("Bill Name:")
-                        .font(.title)
+                       
                         .bold()
                     TextField("e.g. Cable, Netflix", text: $billname)
-                        .font(.title2)
-                        .focused($focusedField, equals: .billname)
+                       
                         .textFieldStyle(.roundedBorder)
                 }
         
                 Group{
                     Text("Bill Amount:")
-                        .font(.title)
+                       
                         .bold()
                     TextField(billVM.string, text: $billVM.string)
                         .font(.title2)

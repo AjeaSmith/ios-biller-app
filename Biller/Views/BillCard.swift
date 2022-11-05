@@ -12,17 +12,34 @@ struct BillCard: View {
     
     var body: some View {
         NavigationLink(destination: BillDetailView(bill: bill)) {
-            ZStack {
+            ZStack(alignment: .leading) {
+                
                 RoundedRectangle(cornerRadius: 5)
-                .fill(Color(red: 0.97, green: 1, blue: 1))
+                .fill(Color("list-background"))
                 .frame(height: 91)
-                .shadow(radius: 7, y: 2)
-                HStack{
-                    Text(bill.unWrappedName)
-                        .foregroundColor(.black)
-                    Text("hi")
-                }
+                .shadow(color: Color("shadow2"), radius: 4, y: 2)
+                
+                Circle()
+                    .fill(Color(.systemOrange))
+                    .frame(width: 6, height: 6)
+                    .offset(x: 9, y: -30)
 
+                
+                HStack{
+                    VStack(alignment: .leading, spacing: 5){
+                        Text(bill.unWrappedName)
+                            .font(Font.listingText1)
+                        Text("Due on \(bill.unWrappedDueDate.formatted(.dateTime.weekday(.wide).day().month()))")
+                            .font(Font.listingText2)
+                    }
+                    Spacer()
+                    Text(bill.unWrappedAmount)
+                        .font(Font.listingText1)
+                }
+                .foregroundColor(Color("listing-text"))
+                .padding(.leading, 25)
+                .padding(.trailing, 25)
+                
             }
             .font(Font.landingText)
             .padding(.horizontal)

@@ -21,17 +21,30 @@ struct BillsView: View {
                 }
                 .onDelete(perform: removeItems)
                 Spacer()
-            }
-            .padding(.top, 20)
-            .toolbar {
-                ToolbarItem{
-                    NavigationLink(destination: AddBillView()) {
-                        Image(systemName: "plus")
+                ZStack {
+                    HStack{
+                        Spacer()
+                        NavigationLink {
+                            AddBillView()
+                        } label: {
+                            Image(systemName: "plus")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 25, height: 25)
+                                .padding(30)
+                        }
+                        .frame(width: 50, height: 50)
+                        .background(Color("primary-color"))
+                        .foregroundColor(.white)
+                        .cornerRadius(.infinity)
+                        .padding()
                     }
                 }
             }
+            .padding(.top, 20)
             .navigationBarTitle(Text("Upcoming Bills"))
             .background(Color("list-background"))
+            
         }
     }
     
