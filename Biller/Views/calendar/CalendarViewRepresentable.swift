@@ -11,7 +11,7 @@ import FSCalendar
 
 struct CalendarViewRepresentable: UIViewRepresentable {
     
-    var calendar = FSCalendar()
+    var calendar: FSCalendar
     
     @Binding var selectedDate: Date
     @Binding var presentModal: Bool
@@ -45,6 +45,7 @@ struct CalendarViewRepresentable: UIViewRepresentable {
     
     func updateUIView(_ uiView: FSCalendar, context: Context) {
         uiView.reloadData()
+        print("Updated")
     }
     func makeCoordinator() -> Coordinator {
         Coordinator(self)

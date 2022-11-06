@@ -32,16 +32,13 @@ struct AddBillView: View {
             VStack(alignment: .leading){
                 Group{
                     Text("Bill Name:")
-                       
                         .bold()
                     TextField("e.g. Cable, Netflix", text: $billname)
-                       
                         .textFieldStyle(.roundedBorder)
                 }
         
                 Group{
                     Text("Bill Amount:")
-                       
                         .bold()
                     TextField(billVM.string, text: $billVM.string)
                         .font(.title2)
@@ -78,7 +75,6 @@ struct AddBillView: View {
                         billVM.setNotifications(dueDate: dueDate, billName: billname, amount: billVM.string, notificationType: .week)
                         
                     }
-                    presentationMode.wrappedValue.dismiss()
                 } label: {
                     Text("Add Bill")
                         .frame(maxWidth: .infinity)
@@ -109,6 +105,7 @@ struct AddBillView: View {
         
         do {
             try viewContext.save()
+            presentationMode.wrappedValue.dismiss()
         } catch {
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")

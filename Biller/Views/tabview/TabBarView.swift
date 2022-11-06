@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import FSCalendar
 
 struct TabBarView: View {
+    let calendar = FSCalendar()
     var body: some View {
         VStack{
             TabView() {
@@ -19,7 +21,10 @@ struct TabBarView: View {
                         }.padding(5)
                     }
                 
-                CalendarView()
+                CalendarView(calendar: calendar)
+                    .onAppear(perform: {
+                        calendar.reloadData()
+                    })
                     .tabItem {
                         VStack {
                             Text("Calendar")

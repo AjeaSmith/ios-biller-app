@@ -8,21 +8,25 @@
 import SwiftUI
 import CoreData
 
+enum CurrentView {
+    case landing, mainView
+}
 struct RootView: View {
-    
     @StateObject var billVM = BillViewModel()
     
-    @State private var isPresented = false
+    @State var currentView: CurrentView = .landing
     
     init() {
         UITabBar.appearance().backgroundColor = UIColor.systemGray5
     }
     
     var body: some View {
-       TabBarView()
-        .environmentObject(billVM)
-        .navigationBarTitle("")
-        .navigationBarBackButtonHidden(true)
-        .navigationBarHidden(true)
+        switch currentView {
+        case .landing:
+            LandingPageView(currentView: $currentView)
+        case .mainView:
+            TabBarView()
+                .environmentObject(billVM)
+        }
     }
 }

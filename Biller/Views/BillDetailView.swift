@@ -10,41 +10,87 @@ import SwiftUI
 struct BillDetailView: View {
     @Environment(\.managedObjectContext) var viewContext
     
-    let bill: BillEntity
+    @Environment(\.presentationMode) var presentationMode
     
-//    @Binding var isPaid: Bool
+    var bill: BillEntity
     
     var body: some View {
-        VStack(alignment: .leading){
+        VStack(alignment: .leading) {
             HStack{
-                Text(bill.unWrappedName)
-                    .font(.largeTitle)
-                Spacer(minLength: 20)
-                
+                Spacer()
                 Button {
-                    bill.isPaid.toggle()
+                    removeItem(bill: bill)
                 } label: {
-                    if bill.isPaid {
-                        HStack {
-                            Image(systemName: "checkmark")
-                            Text("PAID")
-                        }
-                    }else{
-                        Text("MARK AS PAID").foregroundColor(Color(.systemOrange))
-                    }
-                }.disabled(bill.isPaid)
-                
+                    Image(systemName: "trash")
+                }
+                .foregroundColor(Color(.systemRed))
             }
-            HStack{
-                Text("Amount:").fontWeight(.semibold)
-                Text("\(bill.unWrappedAmount)")
-            }
-            HStack{
-                Text("Due Date:").fontWeight(.semibold)
-                Text(bill.unWrappedDueDate.formatted(date: .abbreviated, time: .omitted))
-            }
-            Spacer()
             
-        }.padding()
+            VStack{
+                VStack(alignment: .center, spacing: 50){
+                    HStack{
+                        VStack(alignment: .leading, spacing: 5){
+                            Text(bill.unWrappedName)
+                                .font(Font.listingText1)
+                            Text("Due on \(bill.unWrappedDueDate.formatted(.dateTime.weekday(.wide).day().month()))")
+                                .font(Font.listingText2)
+                        }
+                        Spacer()
+                        VStack{
+                            Text(bill.unWrappedAmount)
+                        }
+                    }
+                    .padding(.leading, 25)
+                    .padding(.trailing, 25)
+                    
+                    if bill.paid {
+                        VStack{
+                            Image("paid")
+                            Text("Paid!")
+                                .font(Font.landingText)
+                                .foregroundColor(Color("primary-color"))
+                                .padding(.bottom, 5)
+                        }
+                    }else {
+                        Button("Mark as Paid") {
+                            markAsPaid()
+                        }
+                        .foregroundColor(Color("primary-color"))
+                        .padding()
+                        .padding(.horizontal, 15)
+                        .background(Color("primary-shadow2"))
+                        .cornerRadius(100)
+                    }
+                    
+                }
+                .padding(.vertical, 15)
+            }
+            .background(Color("list-background"))
+            .shadow(color: Color("shadow2"), radius: 4, y: 2)
+            
+            Spacer()
+        }
+        .padding()
+        .background(Color("list-background"))
+    }
+    func removeItem(bill: BillEntity) {
+        viewContext.delete(bill)
+        
+        do {
+            try viewContext.save()
+        } catch {
+            // handle the Core Data error
+            print("error deleting data -------- \(error.localizedDescription)")
+        }
+    }
+    
+    func markAsPaid() {
+        bill.setValue(true, forKey: "paid")
+        do {
+            try viewContext.save()
+            presentationMode.wrappedValue.dismiss()
+        } catch {
+            print("Error saving isPaid, \(error.localizedDescription)")
+        }
     }
 }

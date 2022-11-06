@@ -20,12 +20,11 @@
 		9528B8E029092A180078DA53 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8DF29092A180078DA53 /* CalendarView.swift */; };
 		9528B8E229092A370078DA53 /* CalendarViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8E129092A370078DA53 /* CalendarViewRepresentable.swift */; };
 		9529564E2913FCAE0047ADFD /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9529564D2913FCAE0047ADFD /* TabBarView.swift */; };
+		95295651291849F40047ADFD /* BillEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9529564F291849F40047ADFD /* BillEntity+CoreDataClass.swift */; };
+		95295652291849F40047ADFD /* BillEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95295650291849F40047ADFD /* BillEntity+CoreDataProperties.swift */; };
 		9557C51A290F8CC200B1D02C /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9557C519290F8CC200B1D02C /* Fonts.swift */; };
 		9557C51C290FA69000B1D02C /* BillViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9557C51B290FA69000B1D02C /* BillViewModel.swift */; };
-		9557C51E2911667A00B1D02C /* BillCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9557C51D2911667A00B1D02C /* BillCard.swift */; };
 		95D4403A290E762100B90D9A /* BillM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95D44038290E762100B90D9A /* BillM.xcdatamodeld */; };
-		95D4403D290E79DB00B90D9A /* BillEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D4403B290E79DB00B90D9A /* BillEntity+CoreDataClass.swift */; };
-		95D4403E290E79DB00B90D9A /* BillEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D4403C290E79DB00B90D9A /* BillEntity+CoreDataProperties.swift */; };
 		95D44042290F348500B90D9A /* LandingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D44041290F348500B90D9A /* LandingPageView.swift */; };
 		95D44046290F81EB00B90D9A /* Lora-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95D44044290F81EB00B90D9A /* Lora-Regular.ttf */; };
 		95D44047290F81EB00B90D9A /* Lora-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95D44045290F81EB00B90D9A /* Lora-Medium.ttf */; };
@@ -45,12 +44,11 @@
 		9528B8DF29092A180078DA53 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		9528B8E129092A370078DA53 /* CalendarViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewRepresentable.swift; sourceTree = "<group>"; };
 		9529564D2913FCAE0047ADFD /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		9529564F291849F40047ADFD /* BillEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BillEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		95295650291849F40047ADFD /* BillEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BillEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9557C519290F8CC200B1D02C /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		9557C51B290FA69000B1D02C /* BillViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillViewModel.swift; sourceTree = "<group>"; };
-		9557C51D2911667A00B1D02C /* BillCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillCard.swift; sourceTree = "<group>"; };
 		95D44039290E762100B90D9A /* BillM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BillM.xcdatamodel; sourceTree = "<group>"; };
-		95D4403B290E79DB00B90D9A /* BillEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BillEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		95D4403C290E79DB00B90D9A /* BillEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BillEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		95D44041290F348500B90D9A /* LandingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageView.swift; sourceTree = "<group>"; };
 		95D44044290F81EB00B90D9A /* Lora-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Regular.ttf"; sourceTree = "<group>"; };
 		95D44045290F81EB00B90D9A /* Lora-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Medium.ttf"; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 				9528B8D92909290D0078DA53 /* SettingsView.swift */,
 				9528B8DB2909291B0078DA53 /* AddBillView.swift */,
 				9528B8DD290929300078DA53 /* BillDetailView.swift */,
-				9557C51D2911667A00B1D02C /* BillCard.swift */,
 				9528B8D1290928650078DA53 /* calendar */,
 			);
 			path = Views;
@@ -130,8 +127,8 @@
 		9528B8D0290928470078DA53 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				95D4403B290E79DB00B90D9A /* BillEntity+CoreDataClass.swift */,
-				95D4403C290E79DB00B90D9A /* BillEntity+CoreDataProperties.swift */,
+				9529564F291849F40047ADFD /* BillEntity+CoreDataClass.swift */,
+				95295650291849F40047ADFD /* BillEntity+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -261,7 +258,6 @@
 				9557C51C290FA69000B1D02C /* BillViewModel.swift in Sources */,
 				9528B8C6290927BC0078DA53 /* Persistence.swift in Sources */,
 				95D4403A290E762100B90D9A /* BillM.xcdatamodeld in Sources */,
-				95D4403D290E79DB00B90D9A /* BillEntity+CoreDataClass.swift in Sources */,
 				9529564E2913FCAE0047ADFD /* TabBarView.swift in Sources */,
 				9528B8DC2909291B0078DA53 /* AddBillView.swift in Sources */,
 				9528B8BD290927BB0078DA53 /* BillerApp.swift in Sources */,
@@ -269,10 +265,10 @@
 				9528B8E229092A370078DA53 /* CalendarViewRepresentable.swift in Sources */,
 				9528B8E029092A180078DA53 /* CalendarView.swift in Sources */,
 				9528B8D6290928E70078DA53 /* RootView.swift in Sources */,
-				9557C51E2911667A00B1D02C /* BillCard.swift in Sources */,
+				95295651291849F40047ADFD /* BillEntity+CoreDataClass.swift in Sources */,
 				9528B8DE290929300078DA53 /* BillDetailView.swift in Sources */,
 				9528B8D8290929010078DA53 /* BillsView.swift in Sources */,
-				95D4403E290E79DB00B90D9A /* BillEntity+CoreDataProperties.swift in Sources */,
+				95295652291849F40047ADFD /* BillEntity+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +325,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -383,7 +379,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

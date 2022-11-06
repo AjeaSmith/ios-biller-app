@@ -15,13 +15,54 @@ struct BillsView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                ForEach(bills, id: \.self) { bill in
-                    BillCard(bill: bill)
+            ZStack {
+                ScrollView {
+                    ForEach(bills, id: \.self) { bill in
+                        NavigationLink(destination: BillDetailView(bill: bill)) {
+                            ZStack(alignment: .leading) {
+                                
+                                RoundedRectangle(cornerRadius: 5)
+                                .fill(Color("list-background"))
+                                .frame(height: 91)
+                                .shadow(color: Color("shadow2"), radius: 4, y: 2)
+                                
+                                Circle()
+                                    .fill(bill.paid ? Color("primary-color") : Color(.systemGray))
+                                    .frame(width: 6, height: 6)
+                                    .offset(x: 9, y: -30)
+                                
+                                HStack{
+                                    VStack(alignment: .leading, spacing: 5){
+                                        Text(bill.unWrappedName)
+                                            .font(Font.listingText1)
+                                        Text("Due on \(bill.unWrappedDueDate.formatted(.dateTime.weekday(.wide).day().month()))")
+                                            .font(Font.listingText2)
+                                    }
+                                    Spacer()
+                                    VStack(alignment: .trailing){
+                                        Text(bill.unWrappedAmount)
+                                            .font(Font.listingText1)
+                                        if bill.paid {
+                                            Text("Paid")
+                                                .font(Font.listingText2)
+                                                .foregroundColor(Color("primary-color"))
+                                        }
+                                    }
+                                }
+                                .foregroundColor(Color("listing-text"))
+                                .padding(.leading, 25)
+                                .padding(.trailing, 25)
+                                
+                            }
+                            .font(Font.landingText)
+                            .padding(.horizontal)
+                            .foregroundColor(Color("list-background"))
+                        }
+                    }
+                    Spacer()
                 }
-                .onDelete(perform: removeItems)
-                Spacer()
-                ZStack {
+                VStack{
+                    Spacer()
                     HStack{
                         Spacer()
                         NavigationLink {
@@ -38,26 +79,13 @@ struct BillsView: View {
                         .foregroundColor(.white)
                         .cornerRadius(.infinity)
                         .padding()
+                        .shadow(color: Color("primary-shadow"), radius: 2, y: 4)
                     }
                 }
             }
-            .padding(.top, 20)
-            .navigationBarTitle(Text("Upcoming Bills"))
             .background(Color("list-background"))
+            .navigationBarTitle(Text("Upcoming Bills"))
             
-        }
-    }
-    
-    func removeItems(at offsets: IndexSet) {
-        for index in offsets {
-            let bill = bills[index]
-            viewContext.delete(bill)
-        }
-        do {
-            try viewContext.save()
-        } catch {
-            // handle the Core Data error
-            print("error deleting data -------- \(error.localizedDescription)")
         }
     }
 }

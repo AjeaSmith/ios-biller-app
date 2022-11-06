@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct BillerApp: App {
+    let persistenceController = PersistenceController.shared
     var body: some Scene {
         WindowGroup {
-            LandingPageView()
+            RootView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
