@@ -7,6 +7,7 @@
 
 import Foundation
 import UserNotifications
+import SwiftUI
 
 class BillViewModel: ObservableObject {
     @Published var isNotificationsEnabled: Bool = false

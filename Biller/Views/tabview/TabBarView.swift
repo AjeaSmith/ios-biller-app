@@ -10,6 +10,10 @@ import FSCalendar
 
 struct TabBarView: View {
     let calendar = FSCalendar()
+    @EnvironmentObject var billVM: BillViewModel
+    
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(key: "dueDate", ascending: true)]) private var bills: FetchedResults<BillEntity>
+    
     var body: some View {
         VStack{
             TabView() {
@@ -22,15 +26,16 @@ struct TabBarView: View {
                     }
                 
                 CalendarView(calendar: calendar)
-                    .onAppear(perform: {
-                        calendar.reloadData()
-                    })
                     .tabItem {
                         VStack {
                             Text("Calendar")
                             Image(systemName: "calendar")
                         }
                     }
+                    .onAppear(perform: {
+                        calendar.reloadData()
+                        print("hello")
+                    })
                 
                 SettingsView()
                     .tabItem {

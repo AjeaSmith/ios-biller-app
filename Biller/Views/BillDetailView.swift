@@ -38,6 +38,7 @@ struct BillDetailView: View {
                         Spacer()
                         VStack{
                             Text(bill.unWrappedAmount)
+                                .font(Font.listingText1)
                         }
                     }
                     .padding(.leading, 25)

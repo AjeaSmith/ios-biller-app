@@ -10,10 +10,10 @@ import SwiftUI
 import FSCalendar
 
 struct CalendarViewRepresentable: UIViewRepresentable {
-    
     var calendar: FSCalendar
     
-    @Binding var selectedDate: Date
+    @Binding var billDueDate: Date
+    @Binding var billName: String
     @Binding var presentModal: Bool
     
     @FetchRequest(sortDescriptors: [NSSortDescriptor(key: "dueDate", ascending: true)]) private var bills: FetchedResults<BillEntity>
@@ -45,7 +45,7 @@ struct CalendarViewRepresentable: UIViewRepresentable {
     
     func updateUIView(_ uiView: FSCalendar, context: Context) {
         uiView.reloadData()
-        print("Updated")
+       
     }
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -60,8 +60,11 @@ struct CalendarViewRepresentable: UIViewRepresentable {
         }
         
         func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-            parent.selectedDate = date
             parent.presentModal = true
+            
+            guard let selectedBill = parent.bills.first(where: {$0.unWrappedDueDate.formatted(date: .abbreviated, time: .omitted) == date.formatted(date: .abbreviated, time: .omitted)}) else { return }
+            parent.billName = selectedBill.unWrappedName
+            parent.billDueDate = selectedBill.unWrappedDueDate
         }
 
         func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {

@@ -22,6 +22,7 @@
 		9529564E2913FCAE0047ADFD /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9529564D2913FCAE0047ADFD /* TabBarView.swift */; };
 		95295651291849F40047ADFD /* BillEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9529564F291849F40047ADFD /* BillEntity+CoreDataClass.swift */; };
 		95295652291849F40047ADFD /* BillEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95295650291849F40047ADFD /* BillEntity+CoreDataProperties.swift */; };
+		95295654291946F00047ADFD /* BillPopupSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95295653291946F00047ADFD /* BillPopupSheet.swift */; };
 		9557C51A290F8CC200B1D02C /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9557C519290F8CC200B1D02C /* Fonts.swift */; };
 		9557C51C290FA69000B1D02C /* BillViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9557C51B290FA69000B1D02C /* BillViewModel.swift */; };
 		95D4403A290E762100B90D9A /* BillM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95D44038290E762100B90D9A /* BillM.xcdatamodeld */; };
@@ -46,6 +47,7 @@
 		9529564D2913FCAE0047ADFD /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		9529564F291849F40047ADFD /* BillEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BillEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		95295650291849F40047ADFD /* BillEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BillEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		95295653291946F00047ADFD /* BillPopupSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillPopupSheet.swift; sourceTree = "<group>"; };
 		9557C519290F8CC200B1D02C /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		9557C51B290FA69000B1D02C /* BillViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillViewModel.swift; sourceTree = "<group>"; };
 		95D44039290E762100B90D9A /* BillM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BillM.xcdatamodel; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 		9528B8CF290928400078DA53 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9528B8D1290928650078DA53 /* calendar */,
 				9529564C2913FC8D0047ADFD /* tabview */,
 				95D44041290F348500B90D9A /* LandingPageView.swift */,
 				9528B8D5290928E70078DA53 /* RootView.swift */,
@@ -119,7 +122,7 @@
 				9528B8D92909290D0078DA53 /* SettingsView.swift */,
 				9528B8DB2909291B0078DA53 /* AddBillView.swift */,
 				9528B8DD290929300078DA53 /* BillDetailView.swift */,
-				9528B8D1290928650078DA53 /* calendar */,
+				95295653291946F00047ADFD /* BillPopupSheet.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				9557C51A290F8CC200B1D02C /* Fonts.swift in Sources */,
 				9528B8DA2909290D0078DA53 /* SettingsView.swift in Sources */,
 				9557C51C290FA69000B1D02C /* BillViewModel.swift in Sources */,
+				95295654291946F00047ADFD /* BillPopupSheet.swift in Sources */,
 				9528B8C6290927BC0078DA53 /* Persistence.swift in Sources */,
 				95D4403A290E762100B90D9A /* BillM.xcdatamodeld in Sources */,
 				9529564E2913FCAE0047ADFD /* TabBarView.swift in Sources */,
