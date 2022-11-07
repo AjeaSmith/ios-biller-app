@@ -34,7 +34,6 @@ struct TabBarView: View {
                     }
                     .onAppear(perform: {
                         calendar.reloadData()
-                        print("hello")
                     })
                 
                 SettingsView()
