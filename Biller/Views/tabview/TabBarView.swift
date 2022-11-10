@@ -35,14 +35,6 @@ struct TabBarView: View {
                     .onAppear(perform: {
                         calendar.reloadData()
                     })
-                
-                SettingsView()
-                    .tabItem {
-                        VStack {
-                            Text("Settings")
-                            Image(systemName: "gearshape")
-                        }
-                    }
             }
         }
     }

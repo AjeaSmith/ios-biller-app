@@ -24,11 +24,6 @@ class BillViewModel: ObservableObject {
     private let calendar = Calendar.current
     private let dateFormatter = DateFormatter()
     
-    enum NotificationType {
-        case fiveDays
-        case week
-    }
-    
     init(maximum: Decimal = 999_999_999.99, locale: Locale = .current) {
         formatter.locale = locale
         self.string = formatter.string(for: amount) ?? "$0.00"
@@ -45,9 +40,23 @@ class BillViewModel: ObservableObject {
             lastValue = string
         }
     }
-//    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
     
-    func setNotifications(dueDate: Date, billName: String, amount: String, notificationType: NotificationType) {
+    func createAlert(daysBefore: Int, dueDate: Date, content: UNMutableNotificationContent ) {
+        let daysBeforeTrigger = calendar.date(byAdding: .day, value: daysBefore, to: dueDate)!
+        
+        let daysBeforeDateComponents = calendar.dateComponents([.day], from: daysBeforeTrigger)
+        
+        // MARK: - test trigger
+        // let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: daysBeforeDateComponents, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request)
+    }
+    
+    func setNotifications(dueDate: Date, billName: String, amount: String, notificationType: String) {
         dateFormatter.dateFormat = "MMM d"
         
         let content = UNMutableNotificationContent()
@@ -56,25 +65,16 @@ class BillViewModel: ObservableObject {
         content.sound = UNNotificationSound.default
         
         switch (notificationType) {
-        case .fiveDays:
-            let fiveDaysTrigger = calendar.date(byAdding: .day, value: -5, to: dueDate)!
-            
-            let fiveDaysDateComponents = calendar.dateComponents([.day], from: fiveDaysTrigger)
-            let trigger = UNCalendarNotificationTrigger(dateMatching: fiveDaysDateComponents, repeats: false)
-            
-            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-            
-            UNUserNotificationCenter.current().add(request)
-            
-        case .week:
-            let weekTrigger = calendar.date(byAdding: .day, value: -7, to: dueDate)!
-            
-            let weekTriggerDateComponents = calendar.dateComponents([.day], from: weekTrigger)
-            let trigger = UNCalendarNotificationTrigger(dateMatching: weekTriggerDateComponents, repeats: false)
-            
-            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-            
-            UNUserNotificationCenter.current().add(request)
+        case "1 day before":
+            createAlert(daysBefore: -1, dueDate: dueDate, content: content)
+        case "2 days before":
+            createAlert(daysBefore: -2, dueDate: dueDate, content: content)
+        case "5 days before":
+            createAlert(daysBefore: -5, dueDate: dueDate, content: content)
+        case "1 week before":
+            createAlert(daysBefore: -7, dueDate: dueDate, content: content)
+        default:
+            return
         }
     }
     

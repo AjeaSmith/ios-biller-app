@@ -10,11 +10,14 @@ import SwiftUI
 struct BillPopupSheet: View {
     @Binding var billName: String
     @Binding var billDueDate: Date
+    @Binding var sortedBills: [BillEntity]
     
     var body: some View {
         VStack{
-            Text(billName)
-            Text(billDueDate.formatted(date: .abbreviated, time: .omitted))
+            ForEach(sortedBills, id: \.self) { bill in
+                Text(bill.unWrappedName)
+                Text(bill.unWrappedDueDate.formatted(date: .abbreviated, time: .omitted))
+            }
         }
     }
 }

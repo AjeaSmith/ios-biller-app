@@ -9,82 +9,80 @@ import SwiftUI
 
 struct AddBillView: View {
     @EnvironmentObject var billVM: BillViewModel
+    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.presentationMode) var presentationMode
     
     private enum Field: Int, CaseIterable {
         case amount
     }
-    
-    @Environment(\.managedObjectContext) private var viewContext
-    @Environment(\.presentationMode) var presentationMode
+    private var alerts = ["1 day before", "2 days before", "5 days before", "1 week before"]
     
     @State private var billname = ""
     @State private var amount = 0
     @State private var dueDate = Date()
-    
-    @State private var isWeekNotification = false
-    @State private var is5DaysNotification = false
+    @State private var selectedAlert = "1 day before"
     
     @FocusState private var focusedField: Field?
     
     var body: some View {
-        // MARK: Form
-        Form {
-            VStack(alignment: .leading){
-                Group{
-                    Text("Bill Name:")
-                        .bold()
-                    TextField("e.g. Cable, Netflix", text: $billname)
-                        .textFieldStyle(.roundedBorder)
-                }
         
-                Group{
-                    Text("Bill Amount:")
-                        .bold()
+        // MARK: Form
+        VStack {
+            Form {
+                Section {
+                    TextField("e.g. Cable, Netflix", text: $billname)
+                    
                     TextField(billVM.string, text: $billVM.string)
                         .font(.title2)
                         .focused($focusedField, equals: .amount)
                         .keyboardType(.numberPad)
                         .onChange(of: billVM.string, perform: billVM.valueChanged)
-                        .textFieldStyle(.roundedBorder)
                 }
                 
-                Group{
+                Section {
                     DatePicker(selection: $dueDate, in: Date()..., displayedComponents: .date, label: { Text("Due Date") })
                         .datePickerStyle(.graphical)
+                }header: {
+                    Text("Due Date")
                 }
+                
                 if billVM.isNotificationsEnabled {
-                    Group{
-                        Toggle("Notify a week before", isOn: $isWeekNotification)
-                            .font(.title2)
-                            .disabled(is5DaysNotification)
-                        
-                        Toggle("Notify 5 days before", isOn: $is5DaysNotification)
-                            .font(.title2)
-                            .disabled(isWeekNotification)
+                    Section {
+                        Picker("Alert", selection: $selectedAlert) {
+                            ForEach(alerts, id: \.self) { alert in
+                                Text(alert)
+                            }
+                        }
                     }
                 }
+                
                 Button {
                     addItem()
-                    
-                    if is5DaysNotification {
-                        
-                        billVM.setNotifications(dueDate: dueDate, billName: billname, amount: billVM.string, notificationType: .fiveDays)
-                        
-                    }else if isWeekNotification {
-                        
-                        billVM.setNotifications(dueDate: dueDate, billName: billname, amount: billVM.string, notificationType: .week)
-                        
+                    // TODO: check if the return exit the whole method without adding bill
+                    switch (selectedAlert) {
+                    case "1 day before":
+                        billVM.setNotifications(dueDate: dueDate, billName: billname, amount: billVM.string, notificationType: "1 day before")
+                    case "2 days before":
+                        billVM.setNotifications(dueDate: dueDate, billName: billname, amount: billVM.string, notificationType: "2 days before")
+                    case "5 days before":
+                        billVM.setNotifications(dueDate: dueDate, billName: billname, amount: billVM.string, notificationType: "5 days before")
+                    case "1 week before":
+                        billVM.setNotifications(dueDate: dueDate, billName: billname, amount: billVM.string, notificationType: "1 week before")
+                    default:
+                        return
                     }
                 } label: {
                     Text("Add Bill")
+                        .bold()
                         .frame(maxWidth: .infinity)
-                        .padding(5)
+                        .padding(12)
                 }
-                .padding()
-                .buttonStyle(.borderedProminent)
+                .background(Color("List/accent"))
+                .foregroundColor(.white)
+                .cornerRadius(5)
             }
-            
         }
+        .navigationBarTitle("Add a Bill")
         .toolbar {
             ToolbarItem(placement: .keyboard) {
                 Button("Done") {
@@ -92,11 +90,8 @@ struct AddBillView: View {
                 }
             }
         }
-        .navigationBarTitle("Add a Bill")
-
-        
-       
     }
+    
     private func addItem() {
         let newItem = BillEntity(context: viewContext)
         newItem.dueDate = dueDate
@@ -113,10 +108,3 @@ struct AddBillView: View {
         
     }
 }
-
-struct AddBillView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddBillView()
-    }
-}
-

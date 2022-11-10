@@ -14,7 +14,6 @@
 		9528B8D4290928820078DA53 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 9528B8D3290928820078DA53 /* FSCalendar */; };
 		9528B8D6290928E70078DA53 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8D5290928E70078DA53 /* RootView.swift */; };
 		9528B8D8290929010078DA53 /* BillsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8D7290929010078DA53 /* BillsView.swift */; };
-		9528B8DA2909290D0078DA53 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8D92909290D0078DA53 /* SettingsView.swift */; };
 		9528B8DC2909291B0078DA53 /* AddBillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8DB2909291B0078DA53 /* AddBillView.swift */; };
 		9528B8DE290929300078DA53 /* BillDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8DD290929300078DA53 /* BillDetailView.swift */; };
 		9528B8E029092A180078DA53 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B8DF29092A180078DA53 /* CalendarView.swift */; };
@@ -39,7 +38,6 @@
 		9528B8C5290927BC0078DA53 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		9528B8D5290928E70078DA53 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		9528B8D7290929010078DA53 /* BillsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsView.swift; sourceTree = "<group>"; };
-		9528B8D92909290D0078DA53 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9528B8DB2909291B0078DA53 /* AddBillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBillView.swift; sourceTree = "<group>"; };
 		9528B8DD290929300078DA53 /* BillDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailView.swift; sourceTree = "<group>"; };
 		9528B8DF29092A180078DA53 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
@@ -97,6 +95,7 @@
 				9557C517290F8C0D00B1D02C /* Helpers */,
 				95D44038290E762100B90D9A /* BillM.xcdatamodeld */,
 				9528B8C0290927BC0078DA53 /* Assets.xcassets */,
+				95295655291D22790047ADFD /* New Group */,
 				9528B8C5290927BC0078DA53 /* Persistence.swift */,
 				9528B8C2290927BC0078DA53 /* Preview Content */,
 			);
@@ -119,7 +118,6 @@
 				95D44041290F348500B90D9A /* LandingPageView.swift */,
 				9528B8D5290928E70078DA53 /* RootView.swift */,
 				9528B8D7290929010078DA53 /* BillsView.swift */,
-				9528B8D92909290D0078DA53 /* SettingsView.swift */,
 				9528B8DB2909291B0078DA53 /* AddBillView.swift */,
 				9528B8DD290929300078DA53 /* BillDetailView.swift */,
 				95295653291946F00047ADFD /* BillPopupSheet.swift */,
@@ -151,6 +149,13 @@
 				9529564D2913FCAE0047ADFD /* TabBarView.swift */,
 			);
 			path = tabview;
+			sourceTree = "<group>";
+		};
+		95295655291D22790047ADFD /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		9557C517290F8C0D00B1D02C /* Helpers */ = {
@@ -257,7 +262,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9557C51A290F8CC200B1D02C /* Fonts.swift in Sources */,
-				9528B8DA2909290D0078DA53 /* SettingsView.swift in Sources */,
 				9557C51C290FA69000B1D02C /* BillViewModel.swift in Sources */,
 				95295654291946F00047ADFD /* BillPopupSheet.swift in Sources */,
 				9528B8C6290927BC0078DA53 /* Persistence.swift in Sources */,
@@ -405,6 +409,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Biller/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BillR;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -439,6 +444,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Biller/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BillR;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

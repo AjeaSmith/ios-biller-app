@@ -16,18 +16,22 @@ struct CalendarViewRepresentable: UIViewRepresentable {
     @Binding var billName: String
     @Binding var presentModal: Bool
     
+    @Binding var sortedBills: [BillEntity]
+    
     @FetchRequest(sortDescriptors: [NSSortDescriptor(key: "dueDate", ascending: true)]) private var bills: FetchedResults<BillEntity>
     
     func makeUIView(context: Context) -> FSCalendar {
         calendar.appearance.todayColor = UIColor(displayP3Red: 0,
                                                  green: 0,
                                                  blue: 0, alpha: 0)
+        calendar.appearance.weekdayTextColor = UIColor(Color("Calendar/weekday"))
+        calendar.appearance.titleDefaultColor = UIColor(Color("Calendar/days"))
         calendar.appearance.titleTodayColor = .black
-        calendar.appearance.selectionColor = .orange
-        calendar.appearance.eventDefaultColor = .systemGreen
-        calendar.appearance.titleTodayColor = .blue
+        calendar.appearance.selectionColor = UIColor(Color("List/accent"))
+        calendar.appearance.eventDefaultColor = UIColor(Color("List/accent"))
+        calendar.appearance.titleTodayColor = .systemBlue
         calendar.appearance.titleFont = .boldSystemFont(ofSize: 24)
-        calendar.appearance.titleWeekendColor = .systemOrange
+        calendar.appearance.titleWeekendColor = UIColor(Color("List/accent"))
         calendar.appearance.headerMinimumDissolvedAlpha = 0.12
         calendar.appearance.headerTitleFont = .systemFont(
             ofSize: 30,
@@ -62,7 +66,16 @@ struct CalendarViewRepresentable: UIViewRepresentable {
         func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
             parent.presentModal = true
             
-            guard let selectedBill = parent.bills.first(where: {$0.unWrappedDueDate.formatted(date: .abbreviated, time: .omitted) == date.formatted(date: .abbreviated, time: .omitted)}) else { return }
+            guard let selectedBill = parent.bills.first(where: {$0.unWrappedDueDate.formatted(date: .abbreviated, time: .omitted) == date.formatted(date: .abbreviated, time: .omitted)}) else {
+                parent.billName = "No bill"
+                parent.billDueDate = Date()
+                return
+            }
+            let filteredBills = parent.bills.filter({ bill in
+                bill.unWrappedDueDate.formatted(date: .abbreviated, time: .omitted) == date.formatted(date: .abbreviated, time: .omitted)
+            })
+            print(filteredBills)
+            parent.sortedBills = filteredBills
             parent.billName = selectedBill.unWrappedName
             parent.billDueDate = selectedBill.unWrappedDueDate
         }

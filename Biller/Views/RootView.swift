@@ -24,6 +24,7 @@ struct RootView: View {
         switch currentView {
         case .landing:
             LandingPageView(currentView: $currentView)
+                .environmentObject(billVM)
         case .mainView:
             TabBarView()
                 .environmentObject(billVM)

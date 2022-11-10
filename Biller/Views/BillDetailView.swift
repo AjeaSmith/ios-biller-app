@@ -49,30 +49,30 @@ struct BillDetailView: View {
                             Image("paid")
                             Text("Paid!")
                                 .font(Font.landingText)
-                                .foregroundColor(Color("primary-color"))
+                                .foregroundColor(Color("List/accent"))
                                 .padding(.bottom, 5)
                         }
                     }else {
                         Button("Mark as Paid") {
                             markAsPaid()
                         }
-                        .foregroundColor(Color("primary-color"))
+                        .foregroundColor(Color("List/text-detail"))
                         .padding()
                         .padding(.horizontal, 15)
-                        .background(Color("primary-shadow2"))
+                        .background(Color("List/primary-shadow2"))
                         .cornerRadius(100)
                     }
                     
                 }
                 .padding(.vertical, 15)
             }
-            .background(Color("list-background"))
-            .shadow(color: Color("shadow2"), radius: 4, y: 2)
+            .background(Color("List/list-background"))
+            .shadow(color: Color("List/shadow"), radius: 4, y: 2)
             
             Spacer()
         }
         .padding()
-        .background(Color("list-background"))
+        .background(Color("List/background"))
     }
     func removeItem(bill: BillEntity) {
         viewContext.delete(bill)
