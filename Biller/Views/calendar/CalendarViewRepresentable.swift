@@ -11,12 +11,9 @@ import FSCalendar
 
 struct CalendarViewRepresentable: UIViewRepresentable {
     var calendar: FSCalendar
-    
-    @Binding var billDueDate: Date
-    @Binding var billName: String
+
     @Binding var presentModal: Bool
-    
-    @Binding var sortedBills: [BillEntity]
+    @Binding var billsInDay: [BillEntity]
     
     @FetchRequest(sortDescriptors: [NSSortDescriptor(key: "dueDate", ascending: true)]) private var bills: FetchedResults<BillEntity>
     
@@ -65,19 +62,12 @@ struct CalendarViewRepresentable: UIViewRepresentable {
         
         func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
             parent.presentModal = true
-            
-            guard let selectedBill = parent.bills.first(where: {$0.unWrappedDueDate.formatted(date: .abbreviated, time: .omitted) == date.formatted(date: .abbreviated, time: .omitted)}) else {
-                parent.billName = "No bill"
-                parent.billDueDate = Date()
-                return
-            }
-            let filteredBills = parent.bills.filter({ bill in
+    
+            let getBillsInDay = parent.bills.filter({ bill in
                 bill.unWrappedDueDate.formatted(date: .abbreviated, time: .omitted) == date.formatted(date: .abbreviated, time: .omitted)
             })
-            print(filteredBills)
-            parent.sortedBills = filteredBills
-            parent.billName = selectedBill.unWrappedName
-            parent.billDueDate = selectedBill.unWrappedDueDate
+
+            parent.billsInDay = getBillsInDay
         }
 
         func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {

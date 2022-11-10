@@ -12,16 +12,14 @@ struct CalendarView: View {
     var calendar: FSCalendar
     
     @State var presentModal = false
-    @State var billName = ""
-    @State var billDueDate: Date = Date()
-    @State var sortedBills: [BillEntity] = []
+    @State var billsInDay: [BillEntity] = []
     
     @FetchRequest(sortDescriptors: [NSSortDescriptor(key: "dueDate", ascending: true)]) private var bills: FetchedResults<BillEntity>
     
     var body: some View {
-        CalendarViewRepresentable(calendar: calendar, billDueDate: $billDueDate, billName: $billName, presentModal: $presentModal, sortedBills: $sortedBills)
+        CalendarViewRepresentable(calendar: calendar, presentModal: $presentModal, billsInDay: $billsInDay)
             .sheet(isPresented: $presentModal) {
-                BillPopupSheet(billName: $billName, billDueDate: $billDueDate, sortedBills: $sortedBills)
+                BillPopupSheet(billsInDay: $billsInDay)
             }
     }
 }
