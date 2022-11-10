@@ -15,10 +15,9 @@ struct BillPopupSheet: View {
             if billsInDay.count == 0 {
                 Text("No Bills for this day")
             }else {
-                Spacer()
                 VStack(alignment: .leading) {
-                    Text("Bills due on this date")
-                        .font(.largeTitle)
+                    Text("Bills due on this day")
+                        .font(.title)
                         .padding(.bottom, 15)
                     ForEach(billsInDay, id: \.self) { bill in
                         HStack{
@@ -37,6 +36,7 @@ struct BillPopupSheet: View {
                     }
                 }
                 .padding(.horizontal)
+                .padding(.top)
                 Spacer()
             }
         }
