@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension BillEntity {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<BillEntity> {

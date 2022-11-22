@@ -25,7 +25,7 @@ struct TabBarView: View {
                         }.padding(5)
                     }
                 
-                CalendarView(calendar: calendar)
+                CalendarView()
                     .tabItem {
                         VStack {
                             Text("Calendar")

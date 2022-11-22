@@ -30,7 +30,7 @@ struct AddBillView: View {
         VStack {
             Form {
                 Section {
-                    TextField("e.g. Cable, Netflix", text: $billname)
+                    TextField("e.g. Rent, Netflix", text: $billname)
                     
                     TextField(billVM.string, text: $billVM.string)
                         .font(.title2)
@@ -101,6 +101,7 @@ struct AddBillView: View {
         do {
             try viewContext.save()
             presentationMode.wrappedValue.dismiss()
+            billVM.string = ""
         } catch {
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")

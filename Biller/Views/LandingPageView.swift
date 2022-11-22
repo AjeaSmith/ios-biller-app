@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct LandingPageView: View {
-    let persistenceController = PersistenceController.shared
-    
     @EnvironmentObject var billVM: BillViewModel
     
     @Binding var currentView: CurrentView

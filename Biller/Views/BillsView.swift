@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct BillsView: View {
-    
-    @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(sortDescriptors: [NSSortDescriptor(key: "dueDate", ascending: true)]) private var bills: FetchedResults<BillEntity>
     
