@@ -9,14 +9,14 @@ import SwiftUI
 import FSCalendar
 
 struct CalendarView: View {
-    
+    var calendar: FSCalendar
     @State var presentModal = false
     @State var billsInDay: [BillEntity] = []
     
     @FetchRequest(sortDescriptors: [NSSortDescriptor(key: "dueDate", ascending: true)]) private var bills: FetchedResults<BillEntity>
     
     var body: some View {
-        CalendarViewRepresentable(presentModal: $presentModal, billsInDay: $billsInDay)
+        CalendarViewRepresentable(calendar:calendar, presentModal: $presentModal, billsInDay: $billsInDay)
             .sheet(isPresented: $presentModal) {
                 BillPopupSheet(billsInDay: $billsInDay)
             }

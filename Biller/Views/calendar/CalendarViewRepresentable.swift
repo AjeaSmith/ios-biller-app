@@ -10,7 +10,7 @@ import SwiftUI
 import FSCalendar
 
 struct CalendarViewRepresentable: UIViewRepresentable {
-    var calendar = FSCalendar()
+    var calendar: FSCalendar
 
     @Binding var presentModal: Bool
     @Binding var billsInDay: [BillEntity]
