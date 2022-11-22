@@ -101,7 +101,6 @@ struct AddBillView: View {
         do {
             try viewContext.save()
             presentationMode.wrappedValue.dismiss()
-            billVM.string = ""
         } catch {
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")

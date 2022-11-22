@@ -46,9 +46,6 @@ class BillViewModel: ObservableObject {
         
         let daysBeforeDateComponents = calendar.dateComponents([.day], from: daysBeforeTrigger)
         
-        // MARK: - test trigger
-        // let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
-        
         let trigger = UNCalendarNotificationTrigger(dateMatching: daysBeforeDateComponents, repeats: false)
         
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
